@@ -12,6 +12,7 @@
 
 
 #import "GameScene.h"
+#import "JMWall.h"
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
@@ -85,14 +86,15 @@ static const uint32_t  milkCategory = 0x1 <<1;  //Milk collision category
     [self createMilkAt:CGPointMake(self.size.width/9, self.size.height/6) withScale:.6 and:.5];
     
     
-    [self createWallAt:CGPointMake(self.size.width/2, self.size.height/1.87) withX:60 andY:10 withImage:@"main_wall"];
-    [self createWallAt:CGPointMake(self.size.width/1.4, self.size.height/1.69) withX:60 andY:10 withImage:@"main_wall"];
-    [self createWallAt:CGPointMake(self.size.width/2.7, self.size.height/2) withX:60 andY:10 withImage:@"main_wall"];
-    [self createWallAt:CGPointMake(self.size.width/3.4, self.size.height/2.23) withX:60 andY:10 withImage:@"main_wall"];
 
-//    NSLog(@"Cookie.W / wall.W = %f",(cookieSprite.frame.size.width/self.view.frame.size.width));
-    //Iphone : 0.119680
-    //Ipad   : 0.140250
+    
+    JMWall *wall = [[JMWall alloc]initWithSize:CGSizeMake(80, 20) withTextureNamed:@"woodLog"];
+    
+    wall.position = CGPointMake(self.size.width/2, self.size.height/1.87);
+    [self addChild:wall];
+    
+
+
     
     
 }
@@ -220,22 +222,6 @@ static const uint32_t  milkCategory = 0x1 <<1;  //Milk collision category
 
 }
 
--(void)createWallAt:(CGPoint)location withX:(CGFloat)x andY: (CGFloat)y withImage: (NSString*)imageString
-{
-    SKSpriteNode *wall = [SKSpriteNode spriteNodeWithTexture:[SKTexture textureWithImageNamed:imageString] size:CGSizeMake(x, y)];
-    
-
-    wall.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:CGPathCreateWithRoundedRect(wall.frame, .01, .01, NULL)];
-    wall.position = CGPointMake(location.x, location.y);
-
-    wall.physicsBody.affectedByGravity = NO;
-    wall.physicsBody.dynamic = YES;
-    
-    
-    
-    [self addChild:wall];
-
-}
 -(void)createMilkAt:(CGPoint)location withScale:(CGFloat)x and: (CGFloat)y
 {
     //Generates the cup of milk

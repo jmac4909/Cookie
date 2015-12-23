@@ -22,7 +22,7 @@
 		3FD6047D1C22052800ECECCE /* sprites-ipad.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6047C1C22052800ECECCE /* sprites-ipad.atlas */; };
 		3FD6047F1C22053700ECECCE /* sprites-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6047E1C22053700ECECCE /* sprites-568.atlas */; };
 		3FF635941C19288A000FC6E2 /* MilkSpashAnimation_Right.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FF635931C19288A000FC6E2 /* MilkSpashAnimation_Right.sks */; };
-		3FFAFE641C2A0F02009E4DFF /* JMCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAFE631C2A0F02009E4DFF /* JMCookie.m */; };
+		3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAFE671C2A3809009E4DFF /* JMWall.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +67,8 @@
 		3FD6047C1C22052800ECECCE /* sprites-ipad.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "sprites-ipad.atlas"; sourceTree = "<group>"; };
 		3FD6047E1C22053700ECECCE /* sprites-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "sprites-568.atlas"; sourceTree = "<group>"; };
 		3FF635931C19288A000FC6E2 /* MilkSpashAnimation_Right.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MilkSpashAnimation_Right.sks; sourceTree = "<group>"; };
-		3FFAFE621C2A0F02009E4DFF /* JMCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCookie.h; sourceTree = "<group>"; };
-		3FFAFE631C2A0F02009E4DFF /* JMCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCookie.m; sourceTree = "<group>"; };
+		3FFAFE661C2A3809009E4DFF /* JMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWall.h; sourceTree = "<group>"; };
+		3FFAFE671C2A3809009E4DFF /* JMWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMWall.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,18 +210,10 @@
 		3FFAFE611C2A0E97009E4DFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3FFAFE651C2A0F0F009E4DFF /* Cookie */,
+				3FFAFE661C2A3809009E4DFF /* JMWall.h */,
+				3FFAFE671C2A3809009E4DFF /* JMWall.m */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		3FFAFE651C2A0F0F009E4DFF /* Cookie */ = {
-			isa = PBXGroup;
-			children = (
-				3FFAFE621C2A0F02009E4DFF /* JMCookie.h */,
-				3FFAFE631C2A0F02009E4DFF /* JMCookie.m */,
-			);
-			name = Cookie;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,10 +353,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FFAFE641C2A0F02009E4DFF /* JMCookie.m in Sources */,
 				3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */,
 				3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */,
 				3F2999B11BC46F6200D99A54 /* GameScene.m in Sources */,
+				3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */,
 				3F2999AB1BC46F6200D99A54 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

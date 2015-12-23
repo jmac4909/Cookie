@@ -1,5 +1,5 @@
 //
-//  JMCookie.h
+//  JMWall.h
 //  cookie
 //
 //  Created by Jeremy Mackey on 12/22/15.
@@ -8,6 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface JMCookie : SKSpriteNode
+@interface JMWall : SKSpriteNode
+
+-(JMWall*)initWithSize:(CGSize )size withTextureNamed:(SKTexture*)texture;
 
 @end
