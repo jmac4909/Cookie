@@ -21,6 +21,10 @@
 		3FD6047B1C22051A00ECECCE /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6047A1C22051A00ECECCE /* sprites.atlas */; };
 		3FD6047D1C22052800ECECCE /* sprites-ipad.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6047C1C22052800ECECCE /* sprites-ipad.atlas */; };
 		3FD6047F1C22053700ECECCE /* sprites-568.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6047E1C22053700ECECCE /* sprites-568.atlas */; };
+		3FDC3CBB1C2D9F7A00EE6FC6 /* JMBasicLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC3CBA1C2D9F7A00EE6FC6 /* JMBasicLevel.m */; };
+		3FDC3CBE1C2D9FCD00EE6FC6 /* JMLevel01.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC3CBD1C2D9FCD00EE6FC6 /* JMLevel01.m */; };
+		3FDC3CC21C2DA94300EE6FC6 /* JMLevel02.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC3CC11C2DA94300EE6FC6 /* JMLevel02.m */; };
+		3FE2C6241C2C9AF100D6CC39 /* JMStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2C6231C2C9AF100D6CC39 /* JMStar.m */; };
 		3FF635941C19288A000FC6E2 /* MilkSpashAnimation_Right.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FF635931C19288A000FC6E2 /* MilkSpashAnimation_Right.sks */; };
 		3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAFE671C2A3809009E4DFF /* JMWall.m */; };
 /* End PBXBuildFile section */
@@ -66,6 +70,14 @@
 		3FD6047A1C22051A00ECECCE /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
 		3FD6047C1C22052800ECECCE /* sprites-ipad.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "sprites-ipad.atlas"; sourceTree = "<group>"; };
 		3FD6047E1C22053700ECECCE /* sprites-568.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "sprites-568.atlas"; sourceTree = "<group>"; };
+		3FDC3CB91C2D9F7A00EE6FC6 /* JMBasicLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBasicLevel.h; sourceTree = "<group>"; };
+		3FDC3CBA1C2D9F7A00EE6FC6 /* JMBasicLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBasicLevel.m; sourceTree = "<group>"; };
+		3FDC3CBC1C2D9FCD00EE6FC6 /* JMLevel01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel01.h; sourceTree = "<group>"; };
+		3FDC3CBD1C2D9FCD00EE6FC6 /* JMLevel01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel01.m; sourceTree = "<group>"; };
+		3FDC3CC01C2DA94300EE6FC6 /* JMLevel02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel02.h; sourceTree = "<group>"; };
+		3FDC3CC11C2DA94300EE6FC6 /* JMLevel02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel02.m; sourceTree = "<group>"; };
+		3FE2C6221C2C9AF100D6CC39 /* JMStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStar.h; sourceTree = "<group>"; };
+		3FE2C6231C2C9AF100D6CC39 /* JMStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStar.m; sourceTree = "<group>"; };
 		3FF635931C19288A000FC6E2 /* MilkSpashAnimation_Right.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MilkSpashAnimation_Right.sks; sourceTree = "<group>"; };
 		3FFAFE661C2A3809009E4DFF /* JMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWall.h; sourceTree = "<group>"; };
 		3FFAFE671C2A3809009E4DFF /* JMWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMWall.m; sourceTree = "<group>"; };
@@ -119,6 +131,7 @@
 		3F2999A81BC46F6200D99A54 /* cookie */ = {
 			isa = PBXGroup;
 			children = (
+				3FDC3CB41C2D9C8100EE6FC6 /* Levels */,
 				3FFAFE611C2A0E97009E4DFF /* Classes */,
 				3FFAFE5D1C2A0D7E009E4DFF /* Sprites */,
 				3FFAFE5E1C2A0DB9009E4DFF /* Delegates */,
@@ -158,6 +171,44 @@
 				3F2999D51BC46F6200D99A54 /* Info.plist */,
 			);
 			path = cookieUITests;
+			sourceTree = "<group>";
+		};
+		3FDC3CB41C2D9C8100EE6FC6 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC3CB91C2D9F7A00EE6FC6 /* JMBasicLevel.h */,
+				3FDC3CBA1C2D9F7A00EE6FC6 /* JMBasicLevel.m */,
+				3FDC3CB51C2D9C9200EE6FC6 /* Level 1 */,
+				3FDC3CBF1C2DA92900EE6FC6 /* Level 02 */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		3FDC3CB51C2D9C9200EE6FC6 /* Level 1 */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC3CBC1C2D9FCD00EE6FC6 /* JMLevel01.h */,
+				3FDC3CBD1C2D9FCD00EE6FC6 /* JMLevel01.m */,
+			);
+			name = "Level 1";
+			sourceTree = "<group>";
+		};
+		3FDC3CBF1C2DA92900EE6FC6 /* Level 02 */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC3CC01C2DA94300EE6FC6 /* JMLevel02.h */,
+				3FDC3CC11C2DA94300EE6FC6 /* JMLevel02.m */,
+			);
+			name = "Level 02";
+			sourceTree = "<group>";
+		};
+		3FE2C6211C2C9AB200D6CC39 /* JMWall */ = {
+			isa = PBXGroup;
+			children = (
+				3FFAFE661C2A3809009E4DFF /* JMWall.h */,
+				3FFAFE671C2A3809009E4DFF /* JMWall.m */,
+			);
+			name = JMWall;
 			sourceTree = "<group>";
 		};
 		3FFAFE5C1C2A0CF4009E4DFF /* Animation */ = {
@@ -210,8 +261,9 @@
 		3FFAFE611C2A0E97009E4DFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3FFAFE661C2A3809009E4DFF /* JMWall.h */,
-				3FFAFE671C2A3809009E4DFF /* JMWall.m */,
+				3FE2C6221C2C9AF100D6CC39 /* JMStar.h */,
+				3FE2C6231C2C9AF100D6CC39 /* JMStar.m */,
+				3FE2C6211C2C9AB200D6CC39 /* JMWall */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -353,10 +405,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE2C6241C2C9AF100D6CC39 /* JMStar.m in Sources */,
 				3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */,
 				3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */,
+				3FDC3CC21C2DA94300EE6FC6 /* JMLevel02.m in Sources */,
 				3F2999B11BC46F6200D99A54 /* GameScene.m in Sources */,
 				3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */,
+				3FDC3CBB1C2D9F7A00EE6FC6 /* JMBasicLevel.m in Sources */,
+				3FDC3CBE1C2D9FCD00EE6FC6 /* JMLevel01.m in Sources */,
 				3F2999AB1BC46F6200D99A54 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

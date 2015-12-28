@@ -8,7 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
-
+#import "JMLevel01.h"
 
 
 @implementation SKScene (Unarchive)
@@ -45,7 +45,7 @@
     
     skView.showsPhysics = NO;
     // Create and configure the scene.
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
+    JMLevel01 *scene = [JMLevel01 unarchiveFromFile:@"GameScene"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     [scene setSize:self.view.frame.size];

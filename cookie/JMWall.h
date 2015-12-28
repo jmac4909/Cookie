@@ -10,6 +10,6 @@
 
 @interface JMWall : SKSpriteNode
 
--(JMWall*)initWithSize:(CGSize )size withTextureNamed:(SKTexture*)texture;
+-(JMWall*)initWithSize:(CGSize )size withStringNamed:(NSString*)texture;
 
 @end

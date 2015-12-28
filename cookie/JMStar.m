@@ -1,29 +1,32 @@
 //
-//  JMWall.m
+//  JMStar.m
 //  cookie
 //
-//  Created by Jeremy Mackey on 12/22/15.
+//  Created by Jeremy Mackey on 12/24/15.
 //  Copyright © 2015 Jeremy Mackey. All rights reserved.
 //
 
-#import "JMWall.h"
+#import "JMStar.h"
+
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
-@implementation JMWall
 
--(JMWall*)initWithSize:(CGSize )size withStringNamed:(NSString*)textureName
+@implementation JMStar
+
+-(JMStar*)initWithSize:(CGSize )size withStringNamed:(NSString*)textureName
 {
     SKTextureAtlas *spriteAtlas = [self textureAtlasNamed:@"sprites"];
     SKTexture *wallTexture = [spriteAtlas textureNamed:textureName];
-
-    self = [[JMWall alloc]initWithTexture:wallTexture];
+    self = [[JMStar alloc]initWithTexture:wallTexture];
     [self setSize:size];
-    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:CGPathCreateWithRoundedRect(self.frame, .01, .01, NULL)];
+
+    self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.frame.size.width/2];
+    self.physicsBody.dynamic = NO;
     
     
-    self.physicsBody.dynamic = YES;
-    return self;
+    
+     return self;
 }
 
 #pragma mark - Helper Methods
@@ -48,4 +51,5 @@
     
     return textureAtlas;
 }
+
 @end
