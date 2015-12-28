@@ -134,7 +134,7 @@ static const uint32_t  starCategory = 0x1 <<2;  //Star collision category
         isTouching = NO;
         startTime = touch.timestamp;
     }
-    
+
     
 }
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
