@@ -7,7 +7,7 @@
 //
 
 #import "JMBasicLevel.h"
-
+#import "JMLevelSelect.h"
 @interface JMLevel02 : JMBasicLevel
 
 @end

@@ -11,7 +11,6 @@
 
 
 
-#import "GameScene.h"
 #import "JMWall.h"
 #import "JMStar.h"
 

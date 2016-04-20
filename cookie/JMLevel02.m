@@ -61,7 +61,9 @@
 }
 -(void)endGame{
     
-    NSLog(@"End game");
+    
+    
+    
     JMLevel01 *scene = [[JMLevel01 alloc]initWithSize:self.size];
     [self.view presentScene:scene];
 }

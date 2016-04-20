@@ -13,6 +13,7 @@
 -(void)didMoveToView:(SKView *)view{
     
     [super didMoveToView:view];
+    
     [self setUpLevel];
 }
 -(void)setUpLevel

@@ -15,7 +15,11 @@
     
     [super didMoveToView:view];
     
-    
+    //****Removes gestures from scrollView****//
+    for (UIGestureRecognizer *gr in self.view.gestureRecognizers) {
+        [self.view removeGestureRecognizer:gr];
+    }
+
     
     //**** Sets up scene ***
     [self.scene.physicsWorld setGravity:CGVectorMake(0, -9.8)];  //Gravity of the world

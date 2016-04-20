@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3F2999AB1BC46F6200D99A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AA1BC46F6200D99A54 /* main.m */; };
 		3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AD1BC46F6200D99A54 /* AppDelegate.m */; };
-		3F2999B11BC46F6200D99A54 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999B01BC46F6200D99A54 /* GameScene.m */; };
-		3F2999B31BC46F6200D99A54 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F2999B21BC46F6200D99A54 /* GameScene.sks */; };
 		3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999B51BC46F6200D99A54 /* GameViewController.m */; };
 		3F2999B91BC46F6200D99A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2999B71BC46F6200D99A54 /* Main.storyboard */; };
 		3F2999BB1BC46F6200D99A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2999BA1BC46F6200D99A54 /* Assets.xcassets */; };
@@ -25,6 +23,8 @@
 		3FDC3CBE1C2D9FCD00EE6FC6 /* JMLevel01.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC3CBD1C2D9FCD00EE6FC6 /* JMLevel01.m */; };
 		3FDC3CC21C2DA94300EE6FC6 /* JMLevel02.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC3CC11C2DA94300EE6FC6 /* JMLevel02.m */; };
 		3FE2C6241C2C9AF100D6CC39 /* JMStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2C6231C2C9AF100D6CC39 /* JMStar.m */; };
+		3FF09B991C8CC9C2007055BB /* JMLevelSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF09B981C8CC9C2007055BB /* JMLevelSelect.m */; };
+		3FF09BA01C8CD2AA007055BB /* JMScrollableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF09B9F1C8CD2AA007055BB /* JMScrollableNode.m */; };
 		3FF635941C19288A000FC6E2 /* MilkSpashAnimation_Right.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FF635931C19288A000FC6E2 /* MilkSpashAnimation_Right.sks */; };
 		3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFAFE671C2A3809009E4DFF /* JMWall.m */; };
 /* End PBXBuildFile section */
@@ -51,9 +51,6 @@
 		3F2999AA1BC46F6200D99A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F2999AC1BC46F6200D99A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F2999AD1BC46F6200D99A54 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3F2999AF1BC46F6200D99A54 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		3F2999B01BC46F6200D99A54 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		3F2999B21BC46F6200D99A54 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		3F2999B41BC46F6200D99A54 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		3F2999B51BC46F6200D99A54 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		3F2999B81BC46F6200D99A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +75,10 @@
 		3FDC3CC11C2DA94300EE6FC6 /* JMLevel02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel02.m; sourceTree = "<group>"; };
 		3FE2C6221C2C9AF100D6CC39 /* JMStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMStar.h; sourceTree = "<group>"; };
 		3FE2C6231C2C9AF100D6CC39 /* JMStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMStar.m; sourceTree = "<group>"; };
+		3FF09B971C8CC9C2007055BB /* JMLevelSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMLevelSelect.h; path = ../JMLevelSelect.h; sourceTree = "<group>"; };
+		3FF09B981C8CC9C2007055BB /* JMLevelSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JMLevelSelect.m; path = ../JMLevelSelect.m; sourceTree = "<group>"; };
+		3FF09B9E1C8CD2AA007055BB /* JMScrollableNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMScrollableNode.h; sourceTree = "<group>"; };
+		3FF09B9F1C8CD2AA007055BB /* JMScrollableNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMScrollableNode.m; sourceTree = "<group>"; };
 		3FF635931C19288A000FC6E2 /* MilkSpashAnimation_Right.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MilkSpashAnimation_Right.sks; sourceTree = "<group>"; };
 		3FFAFE661C2A3809009E4DFF /* JMWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMWall.h; sourceTree = "<group>"; };
 		3FFAFE671C2A3809009E4DFF /* JMWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMWall.m; sourceTree = "<group>"; };
@@ -131,11 +132,11 @@
 		3F2999A81BC46F6200D99A54 /* cookie */ = {
 			isa = PBXGroup;
 			children = (
+				3FF09B9A1C8CCEC1007055BB /* Menu */,
 				3FDC3CB41C2D9C8100EE6FC6 /* Levels */,
 				3FFAFE611C2A0E97009E4DFF /* Classes */,
 				3FFAFE5D1C2A0D7E009E4DFF /* Sprites */,
 				3FFAFE5E1C2A0DB9009E4DFF /* Delegates */,
-				3FFAFE5F1C2A0DCF009E4DFF /* GameScene */,
 				3FFAFE5C1C2A0CF4009E4DFF /* Animation */,
 				3FFAFE601C2A0E08009E4DFF /* GameView Controller */,
 				3F2999B71BC46F6200D99A54 /* Main.storyboard */,
@@ -176,8 +177,7 @@
 		3FDC3CB41C2D9C8100EE6FC6 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				3FDC3CB91C2D9F7A00EE6FC6 /* JMBasicLevel.h */,
-				3FDC3CBA1C2D9F7A00EE6FC6 /* JMBasicLevel.m */,
+				3FF09B961C8CC8A2007055BB /* Basic Level */,
 				3FDC3CB51C2D9C9200EE6FC6 /* Level 1 */,
 				3FDC3CBF1C2DA92900EE6FC6 /* Level 02 */,
 			);
@@ -211,6 +211,26 @@
 			name = JMWall;
 			sourceTree = "<group>";
 		};
+		3FF09B961C8CC8A2007055BB /* Basic Level */ = {
+			isa = PBXGroup;
+			children = (
+				3FDC3CB91C2D9F7A00EE6FC6 /* JMBasicLevel.h */,
+				3FDC3CBA1C2D9F7A00EE6FC6 /* JMBasicLevel.m */,
+			);
+			name = "Basic Level";
+			sourceTree = "<group>";
+		};
+		3FF09B9A1C8CCEC1007055BB /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3FF09B9E1C8CD2AA007055BB /* JMScrollableNode.h */,
+				3FF09B9F1C8CD2AA007055BB /* JMScrollableNode.m */,
+				3FF09B971C8CC9C2007055BB /* JMLevelSelect.h */,
+				3FF09B981C8CC9C2007055BB /* JMLevelSelect.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		3FFAFE5C1C2A0CF4009E4DFF /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,16 +257,6 @@
 				3F2999AD1BC46F6200D99A54 /* AppDelegate.m */,
 			);
 			name = Delegates;
-			sourceTree = "<group>";
-		};
-		3FFAFE5F1C2A0DCF009E4DFF /* GameScene */ = {
-			isa = PBXGroup;
-			children = (
-				3F2999AF1BC46F6200D99A54 /* GameScene.h */,
-				3F2999B01BC46F6200D99A54 /* GameScene.m */,
-				3F2999B21BC46F6200D99A54 /* GameScene.sks */,
-			);
-			name = GameScene;
 			sourceTree = "<group>";
 		};
 		3FFAFE601C2A0E08009E4DFF /* GameView Controller */ = {
@@ -374,7 +384,6 @@
 			files = (
 				3FD0642F1C15205300FF0B6D /* MilkSpashAnimation_Left.sks in Resources */,
 				3FD6047B1C22051A00ECECCE /* sprites.atlas in Resources */,
-				3F2999B31BC46F6200D99A54 /* GameScene.sks in Resources */,
 				3FD6047F1C22053700ECECCE /* sprites-568.atlas in Resources */,
 				3F2999BE1BC46F6200D99A54 /* LaunchScreen.storyboard in Resources */,
 				3F2999BB1BC46F6200D99A54 /* Assets.xcassets in Resources */,
@@ -406,10 +415,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE2C6241C2C9AF100D6CC39 /* JMStar.m in Sources */,
+				3FF09B991C8CC9C2007055BB /* JMLevelSelect.m in Sources */,
 				3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */,
 				3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */,
 				3FDC3CC21C2DA94300EE6FC6 /* JMLevel02.m in Sources */,
-				3F2999B11BC46F6200D99A54 /* GameScene.m in Sources */,
+				3FF09BA01C8CD2AA007055BB /* JMScrollableNode.m in Sources */,
 				3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */,
 				3FDC3CBB1C2D9F7A00EE6FC6 /* JMBasicLevel.m in Sources */,
 				3FDC3CBE1C2D9FCD00EE6FC6 /* JMLevel01.m in Sources */,
@@ -558,6 +568,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JMAC.cookie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -571,6 +582,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JMAC.cookie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
