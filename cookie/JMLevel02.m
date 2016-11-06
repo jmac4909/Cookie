@@ -20,7 +20,7 @@
     SKSpriteNode* background = [SKSpriteNode spriteNodeWithTexture:[spriteAtlas textureNamed:@"bg"]];
     background.size = self.frame.size;
     background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-    background.zPosition = -1;
+    background.zPosition = -5;
     [self addChild:background];
     
     //**** Bottom sprite
@@ -55,6 +55,7 @@
     cookieSprite.physicsBody.categoryBitMask = cookieCategory;
     cookieSprite.physicsBody.contactTestBitMask = milkCategory ;
     cookieSprite.physicsBody.collisionBitMask = milkCategory;
+    cookieSprite.zPosition = 0;
     cookieSprite.physicsBody.dynamic = YES;
     //***** End cookie sprite *****
     
@@ -62,9 +63,25 @@
 -(void)endGame{
     
     
+    [super endGame];
+
+
+}
+-(void)menuButtonPress{
+    
+    NSLog(@"menu press");
+    [super menuButtonPress];
+
+}
+-(void)nextLevelButtonPress{
     
     
+    NSLog(@"next press");
+
     JMLevel01 *scene = [[JMLevel01 alloc]initWithSize:self.size];
     [self.view presentScene:scene];
+    
 }
+
+
 @end

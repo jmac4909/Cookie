@@ -5,7 +5,7 @@
 //  Created by Jeremy Mackey on 12/25/15.
 //  Copyright © 2015 Jeremy Mackey. All rights reserved.
 //
-
+#import "JMLevelSelect.h"
 #import "JMBasicLevel.h"
 
 @implementation JMBasicLevel
@@ -54,10 +54,23 @@
     
     UITouch *touch = [touches anyObject];
     startTime = touch.timestamp;
+
     CGPoint location = [touch locationInNode:self];
+    SKNode *node = [self nodeAtPoint:location];
+
     if ([cookieSprite containsPoint:location] && [self cookieOnGround]) {
         touchPoint = location;
         isTouching = true;
+    }else if ([node.name isEqualToString:@"nextLevelButton"]){
+        
+        
+            [self nextLevelButtonPress];
+        
+        
+    }else if ([node.name isEqualToString:@"menuButton"])
+    {
+        
+        [self menuButtonPress];
     }
     
 }
@@ -89,7 +102,8 @@
         {
             gameOver = true;
             [self splashMilk];
-            [self endGame];
+            [self performSelector:@selector(endGame) withObject:nil afterDelay:1];
+            
             
         }
         
@@ -100,7 +114,8 @@
         {
             gameOver = true;
             [self splashMilk];
-            [self endGame];
+            [self performSelector:@selector(endGame) withObject:nil afterDelay:1];
+
         }
     }
     
@@ -129,7 +144,35 @@
     
 }
 #pragma mark - Game Methods
--(void)endGame{}
+-(void)endGame{
+
+    NSLog(@"endGAME");
+    //Sets menu Background
+    SKSpriteNode* menuBackground = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:self.scene.size];
+    menuBackground.size = self.frame.size;
+    menuBackground.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    menuBackground.zPosition = 5;
+    menuBackground.alpha = 0.75;
+    [self addChild:menuBackground];
+    
+    //Sets next level Button
+    SKSpriteNode* nextButton = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.scene.size.width/3, self.scene.size.width/8)];
+    nextButton.position = CGPointMake(CGRectGetMidX(self.frame)/2, CGRectGetMidY(self.frame));
+    nextButton.zPosition = 6;
+    nextButton.name = @"nextLevelButton";
+    [self addChild:nextButton];
+    
+    //Sets Menu Button
+    SKSpriteNode* menuButton = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.scene.size.width/3, self.scene.size.width/8)];
+    menuButton.position = CGPointMake(CGRectGetMidX(self.frame) + CGRectGetMidX(self.frame)/2, CGRectGetMidY(self.frame));
+    menuButton.zPosition = 6;
+    menuButton.name = @"menuButton";
+    [self addChild:menuButton];
+
+
+
+
+}
 -(void)splashMilk{
     
     SKEmitterNode *milkSplashNodeLeft = [NSKeyedUnarchiver
@@ -179,6 +222,7 @@
     milkNode.physicsBody.affectedByGravity = NO;
     milkNode.position = CGPointMake(location.x, location.y);
     milkNode.physicsBody.dynamic = YES;
+    milkNode.zPosition = 1;
     [self addChild:milkNode];
     
     //Generates the top of milk
@@ -244,6 +288,15 @@
     }
     
     return false;
+}
+
+-(void)nextLevelButtonPress{
+    
+}
+-(void)menuButtonPress{
+    
+    JMLevelSelect *scene = [[JMLevelSelect alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
 }
 #pragma mark - Helper Methods
 - (SKTextureAtlas *)textureAtlasNamed:(NSString *)fileName{

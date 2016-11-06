@@ -42,6 +42,8 @@ static const uint32_t  starCategory = 0x1 <<2;  //Star collision category
 }
 -(void)createMilkAt:(CGPoint)location withScale:(CGFloat)x and: (CGFloat)y;
 -(void)splashMilk;
+-(void)nextLevelButtonPress;
+-(void)menuButtonPress;
 -(void)endGame;
 - (SKTextureAtlas *)textureAtlasNamed:(NSString *)fileName;
 @end
