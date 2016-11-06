@@ -20,6 +20,8 @@
 static const uint32_t cookieCategory = 0x1 <<0;  //cookie collison cattegory
 static const uint32_t  milkCategory = 0x1 <<1;  //Milk collision category
 static const uint32_t  starCategory = 0x1 <<2;  //Star collision category
+static const uint32_t  wallCategory = 0x1 <<3;  //Wall collision category
+
 
 
 @interface JMBasicLevel : SKScene<SKPhysicsContactDelegate>{
@@ -37,7 +39,7 @@ static const uint32_t  starCategory = 0x1 <<2;  //Star collision category
     CGPoint cookieStartPoint;
     int currentLevel;
     BOOL gameOver;
-    
+    BOOL canGetStars;
     BOOL isTouching;
 }
 -(void)createMilkAt:(CGPoint)location withScale:(CGFloat)x and: (CGFloat)y;
@@ -45,5 +47,8 @@ static const uint32_t  starCategory = 0x1 <<2;  //Star collision category
 -(void)nextLevelButtonPress;
 -(void)menuButtonPress;
 -(void)endGame;
+-(void)addStars;
+-(void)addWalls;
+
 - (SKTextureAtlas *)textureAtlasNamed:(NSString *)fileName;
 @end

@@ -20,7 +20,9 @@
     self = [[JMWall alloc]initWithTexture:wallTexture];
     [self setSize:size];
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:CGPathCreateWithRoundedRect(self.frame, .01, .01, NULL)];
-    
+    self.physicsBody.affectedByGravity = NO;
+    self.physicsBody.pinned = YES;
+
     
     self.physicsBody.dynamic = YES;
     return self;

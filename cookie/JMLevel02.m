@@ -33,7 +33,7 @@
     
     [self createCookie];
     //Adds Milk
-    [super createMilkAt:CGPointMake(self.frame.size.width/1.2, self.frame.size.height/1.2) withScale:.6 and:.5];
+    [self createMilkAt:CGPointMake(self.frame.size.width/1.2, self.frame.size.height/1.2) withScale:.6 and:.5];
     
     cookieStartPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height);
     cookieSprite.position = cookieStartPoint;
@@ -53,11 +53,19 @@
     cookieSprite.xScale = 0.17;
     cookieSprite.yScale = 0.17;
     cookieSprite.physicsBody.categoryBitMask = cookieCategory;
-    cookieSprite.physicsBody.contactTestBitMask = milkCategory ;
-    cookieSprite.physicsBody.collisionBitMask = milkCategory;
+    cookieSprite.physicsBody.contactTestBitMask = milkCategory | wallCategory;
+    cookieSprite.physicsBody.collisionBitMask = milkCategory | wallCategory;
     cookieSprite.zPosition = 0;
     cookieSprite.physicsBody.dynamic = YES;
     //***** End cookie sprite *****
+    
+}
+
+-(void)addStars{
+    
+    
+}
+-(void)addWalls{
     
 }
 -(void)endGame{

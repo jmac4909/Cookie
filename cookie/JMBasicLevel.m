@@ -27,7 +27,7 @@
     self.physicsBody.restitution = 0.5;  //Makes bouncy walls
     self.physicsWorld.contactDelegate = self; //Alows for collision detection
     gameOver = false;
-    
+    canGetStars = false;
     
     
     //**** End Scene Set up
@@ -94,8 +94,7 @@
 #pragma mark - Contact methods
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
-    
-    if (contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == milkCategory)
+    if ((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == milkCategory)||(contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == milkCategory))
     {
         
         if (!gameOver)
@@ -108,42 +107,46 @@
         }
         
     }
-    else if (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == milkCategory)
-    {
-        if (!gameOver)
-        {
-            gameOver = true;
-            [self splashMilk];
-            [self performSelector:@selector(endGame) withObject:nil afterDelay:1];
-
-        }
-    }
+   
     
     //Cookie Hits Star
-    if (contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == starCategory)
+    if (((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == starCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == starCategory)) && canGetStars == true)
     {
-        
-        SKNode *starBody = contact.bodyB.node;
+        SKNode *starBody;
+        if (contact.bodyA.categoryBitMask == starCategory) {
+            starBody = contact.bodyA.node;
+
+        }else{
+            starBody = contact.bodyB.node;
+        }
         
         
         [starBody removeFromParent];
         
         
     }
-    else if (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == starCategory)
-    {
-        
-        SKNode *starBody = contact.bodyA.node;
-        
-        
-        [starBody removeFromParent];
-        
-        
+    
+
+    //Cookie Hits Wall
+
+    if ((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == wallCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == wallCategory)){
+
+        [self addStars];
+        canGetStars = true;
     }
+    
     
     
 }
 #pragma mark - Game Methods
+
+-(void)addStars{
+    
+}
+-(void)addWalls{
+    
+}
+
 -(void)endGame{
 
     NSLog(@"endGAME");

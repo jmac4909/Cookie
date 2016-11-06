@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27259CB51DCFC9FE00885410 /* JMLevel03.m in Sources */ = {isa = PBXBuildFile; fileRef = 27259CB41DCFC9FE00885410 /* JMLevel03.m */; };
 		3F2999AB1BC46F6200D99A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AA1BC46F6200D99A54 /* main.m */; };
 		3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AD1BC46F6200D99A54 /* AppDelegate.m */; };
 		3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999B51BC46F6200D99A54 /* GameViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27259CB31DCFC9FE00885410 /* JMLevel03.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel03.h; sourceTree = "<group>"; };
+		27259CB41DCFC9FE00885410 /* JMLevel03.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel03.m; sourceTree = "<group>"; };
 		3F2999A61BC46F6200D99A54 /* cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2999AA1BC46F6200D99A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F2999AC1BC46F6200D99A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27259CB21DCFC9DF00885410 /* Level 03 */ = {
+			isa = PBXGroup;
+			children = (
+				27259CB31DCFC9FE00885410 /* JMLevel03.h */,
+				27259CB41DCFC9FE00885410 /* JMLevel03.m */,
+			);
+			name = "Level 03";
+			sourceTree = "<group>";
+		};
 		3F29999D1BC46F6200D99A54 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +192,7 @@
 				3FF09B961C8CC8A2007055BB /* Basic Level */,
 				3FDC3CB51C2D9C9200EE6FC6 /* Level 1 */,
 				3FDC3CBF1C2DA92900EE6FC6 /* Level 02 */,
+				27259CB21DCFC9DF00885410 /* Level 03 */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -415,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE2C6241C2C9AF100D6CC39 /* JMStar.m in Sources */,
+				27259CB51DCFC9FE00885410 /* JMLevel03.m in Sources */,
 				3FF09B991C8CC9C2007055BB /* JMLevelSelect.m in Sources */,
 				3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */,
 				3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */,

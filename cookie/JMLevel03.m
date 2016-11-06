@@ -1,24 +1,21 @@
 //
-//  JMLevel01.m
+//  JMLevel03.m
 //  cookie
 //
-//  Created by Jeremy Mackey on 12/25/15.
-//  Copyright © 2015 Jeremy Mackey. All rights reserved.
+//  Created by Jeremy Mackey on 11/6/16.
+//  Copyright © 2016 Jeremy Mackey. All rights reserved.
 //
 
-#import "JMLevel01.h"
-#import "JMLevel02.h"
-@implementation JMLevel01
+#import "JMLevel03.h"
+
+@implementation JMLevel03
 
 -(void)didMoveToView:(SKView *)view{
     
     [super didMoveToView:view];
-    
     [self setUpLevel];
 }
--(void)setUpLevel
-{
-
+-(void)setUpLevel{
     
     //Sets Backgound
     SKSpriteNode* background = [SKSpriteNode spriteNodeWithTexture:[spriteAtlas textureNamed:@"bg"]];
@@ -35,21 +32,18 @@
     [self addChild:bottomLayer];
     //**** End bottom sprite
     
-    //Adds Cookie
     [self createCookie];
     //Adds Milk
-    [self createMilkAt:CGPointMake(self.frame.size.width/9, self.frame.size.height/6) withScale:.6 and:.5];
-    //Adds Walls
+    [self createMilkAt:CGPointMake(self.frame.size.width/1.2, self.frame.size.height/1.2) withScale:.6 and:.5];
+    //Add walls
     [self addWalls];
     
     cookieStartPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height);
     cookieSprite.position = cookieStartPoint;
-
     if (cookieSprite.parent == nil) {
         [self addChild:cookieSprite];
         
     }
-    
 }
 -(void)createCookie{
     //**** Cookie sprite *****
@@ -67,12 +61,51 @@
     cookieSprite.zPosition = 0;
     cookieSprite.physicsBody.dynamic = YES;
     //***** End cookie sprite *****
+    
+}
+
+-(void)addStars{
+    
+    [super addStars];
+    
+    if (canGetStars == false) {
+        
+        
+        JMStar *star1;
+        if (!star1) {
+            star1 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
+        }
+        star1.position = CGPointMake(self.frame.size.width/1.2, self.frame.size.height/1.1);
+        star1.physicsBody.categoryBitMask = starCategory;
+        star1.physicsBody.contactTestBitMask = cookieCategory;
+        if (star1.parent == nil) {
+            [self addChild:star1];
+            
+        }
+        JMStar *star2 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
+        star2.position = CGPointMake(self.frame.size.width/9, self.frame.size.height/1.2);
+        star2.physicsBody.categoryBitMask = starCategory;
+        star2.physicsBody.contactTestBitMask = cookieCategory;
+        if (star2.parent == nil) {
+            [self addChild:star2];
+            
+        }
+        JMStar *star3 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
+        star3.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/1.5);
+        star3.physicsBody.categoryBitMask = starCategory;
+        star3.physicsBody.contactTestBitMask = cookieCategory;
+        if (star3.parent == nil) {
+            [self addChild:star3];
+            
+        }
+    }
 
 }
 -(void)addWalls{
+    
     //Wall
     JMWall *wall = [[JMWall alloc]initWithSize:CGSizeMake(80, 20) withStringNamed:@"woodLog"];
-    wall.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/1.87);
+    wall.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/1.9);
     wall.physicsBody.categoryBitMask = wallCategory;
     wall.physicsBody.contactTestBitMask = cookieCategory;
     wall.physicsBody.collisionBitMask = cookieCategory;
@@ -83,51 +116,12 @@
 
     
 }
--(void)addStars{
-    [super addStars];
-    
-    if (canGetStars == false) {
-        
-    
-    JMStar *star1;
-    if (!star1) {
-        star1 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
-    }
-    star1.position = CGPointMake(self.frame.size.width/1.09, self.frame.size.height/1.2);
-    star1.physicsBody.categoryBitMask = starCategory;
-    star1.physicsBody.contactTestBitMask = cookieCategory;
-    if (star1.parent == nil) {
-        [self addChild:star1];
-        
-    }
-    JMStar *star2 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
-    star2.position = CGPointMake(self.frame.size.width/9, self.frame.size.height/1.4);
-    star2.physicsBody.categoryBitMask = starCategory;
-    star2.physicsBody.contactTestBitMask = cookieCategory;
-    if (star2.parent == nil) {
-        [self addChild:star2];
-        
-    }
-    JMStar *star3 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
-    star3.position = CGPointMake(self.frame.size.width/8.8, self.frame.size.height/3.3);
-    star3.physicsBody.categoryBitMask = starCategory;
-    star3.physicsBody.contactTestBitMask = cookieCategory;
-    if (star3.parent == nil) {
-        [self addChild:star3];
-        
-    }
-    }
-    
-}
-
 -(void)endGame{
     
- 
-    [super endGame];
-
     
-
- 
+    [super endGame];
+    
+    
 }
 -(void)menuButtonPress{
     
@@ -138,11 +132,10 @@
 -(void)nextLevelButtonPress{
     
     
-    NSLog(@"nextLevelButton");
-    JMLevel02 *scene = [[JMLevel02 alloc]initWithSize:self.size];
-    [self.view presentScene:scene];
 
+    
 }
+
 
 
 
