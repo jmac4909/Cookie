@@ -131,7 +131,6 @@
 
     if ((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == wallCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == wallCategory)){
 
-        [self addStars];
         canGetStars = true;
     }
     

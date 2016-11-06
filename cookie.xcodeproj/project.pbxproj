@@ -133,6 +133,15 @@
 			name = "Level 04";
 			sourceTree = "<group>";
 		};
+		27CD599E1DCFD1FB009787EF /* JMStar */ = {
+			isa = PBXGroup;
+			children = (
+				3FE2C6221C2C9AF100D6CC39 /* JMStar.h */,
+				3FE2C6231C2C9AF100D6CC39 /* JMStar.m */,
+			);
+			name = JMStar;
+			sourceTree = "<group>";
+		};
 		3F29999D1BC46F6200D99A54 = {
 			isa = PBXGroup;
 			children = (
@@ -297,8 +306,7 @@
 		3FFAFE611C2A0E97009E4DFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3FE2C6221C2C9AF100D6CC39 /* JMStar.h */,
-				3FE2C6231C2C9AF100D6CC39 /* JMStar.m */,
+				27CD599E1DCFD1FB009787EF /* JMStar */,
 				3FE2C6211C2C9AB200D6CC39 /* JMWall */,
 			);
 			name = Classes;

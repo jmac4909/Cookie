@@ -41,6 +41,8 @@
     [self createMilkAt:CGPointMake(self.frame.size.width/9, self.frame.size.height/6) withScale:.6 and:.5];
     //Adds Walls
     [self addWalls];
+    //Add Stars
+    [self addStars];
     
     cookieStartPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height);
     cookieSprite.position = cookieStartPoint;
