@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27259CB51DCFC9FE00885410 /* JMLevel03.m in Sources */ = {isa = PBXBuildFile; fileRef = 27259CB41DCFC9FE00885410 /* JMLevel03.m */; };
+		27CD599C1DCFD03C009787EF /* JMLevel04.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CD599B1DCFD03C009787EF /* JMLevel04.m */; };
 		3F2999AB1BC46F6200D99A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AA1BC46F6200D99A54 /* main.m */; };
 		3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AD1BC46F6200D99A54 /* AppDelegate.m */; };
 		3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999B51BC46F6200D99A54 /* GameViewController.m */; };
@@ -50,6 +51,8 @@
 /* Begin PBXFileReference section */
 		27259CB31DCFC9FE00885410 /* JMLevel03.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel03.h; sourceTree = "<group>"; };
 		27259CB41DCFC9FE00885410 /* JMLevel03.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel03.m; sourceTree = "<group>"; };
+		27CD599A1DCFD03C009787EF /* JMLevel04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel04.h; sourceTree = "<group>"; };
+		27CD599B1DCFD03C009787EF /* JMLevel04.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel04.m; sourceTree = "<group>"; };
 		3F2999A61BC46F6200D99A54 /* cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2999AA1BC46F6200D99A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F2999AC1BC46F6200D99A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +122,15 @@
 				27259CB41DCFC9FE00885410 /* JMLevel03.m */,
 			);
 			name = "Level 03";
+			sourceTree = "<group>";
+		};
+		27CD599D1DCFD043009787EF /* Level 04 */ = {
+			isa = PBXGroup;
+			children = (
+				27CD599A1DCFD03C009787EF /* JMLevel04.h */,
+				27CD599B1DCFD03C009787EF /* JMLevel04.m */,
+			);
+			name = "Level 04";
 			sourceTree = "<group>";
 		};
 		3F29999D1BC46F6200D99A54 = {
@@ -193,6 +205,7 @@
 				3FDC3CB51C2D9C9200EE6FC6 /* Level 1 */,
 				3FDC3CBF1C2DA92900EE6FC6 /* Level 02 */,
 				27259CB21DCFC9DF00885410 /* Level 03 */,
+				27CD599D1DCFD043009787EF /* Level 04 */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -436,6 +449,7 @@
 				3FF09BA01C8CD2AA007055BB /* JMScrollableNode.m in Sources */,
 				3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */,
 				3FDC3CBB1C2D9F7A00EE6FC6 /* JMBasicLevel.m in Sources */,
+				27CD599C1DCFD03C009787EF /* JMLevel04.m in Sources */,
 				3FDC3CBE1C2D9FCD00EE6FC6 /* JMLevel01.m in Sources */,
 				3F2999AB1BC46F6200D99A54 /* main.m in Sources */,
 			);

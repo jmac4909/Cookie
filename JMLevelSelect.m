@@ -10,6 +10,8 @@
 #import "JMLevel01.h"
 #import "JMLevel02.h"
 #import "JMLevel03.h"
+#import "JMLevel04.h"
+
 
 
 @implementation JMLevelSelect
@@ -132,6 +134,13 @@
         
         // Present the scene.
         [self.view presentScene:JMlevel3];
+        
+    }else if ([node.name isEqualToString:@"level4"])
+    {
+        JMLevel04 *JMlevel4 = [[JMLevel04 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        // Present the scene.
+        [self.view presentScene:JMlevel4];
         
     }
 }
