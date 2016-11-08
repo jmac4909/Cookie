@@ -31,6 +31,9 @@
     SKSpriteNode *bottomLayer = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(self.size.width, 10)];
     bottomLayer.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:bottomLayer.frame];
     bottomLayer.physicsBody.affectedByGravity = NO;
+    bottomLayer.physicsBody.categoryBitMask = floorCategory;
+    bottomLayer.physicsBody.contactTestBitMask = cookieCategory;
+    bottomLayer.physicsBody.collisionBitMask = cookieCategory;
     [bottomLayer setPosition:CGPointMake(self.scene.size.width/2, self.scene.size.height/10)];
     [self addChild:bottomLayer];
     //**** End bottom sprite
@@ -133,17 +136,20 @@
 }
 -(void)menuButtonPress{
     
-    NSLog(@"menu press");
     [super menuButtonPress];
     
 }
 -(void)nextLevelButtonPress{
     
-    
-    NSLog(@"nextLevelButton");
     JMLevel02 *scene = [[JMLevel02 alloc]initWithSize:self.size];
     [self.view presentScene:scene];
 
+}
+-(void)restart{
+ 
+    JMLevel01 *scene = [[JMLevel01 alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
+    
 }
 
 

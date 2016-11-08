@@ -134,6 +134,14 @@
         canGetStars = true;
     }
     
+    //Cookie Hits Floor
+    
+    if ((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == floorCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == floorCategory)){
+        
+        [self restart];
+    }
+
+    
     
     
 }
@@ -146,6 +154,15 @@
     
 }
 
+-(void)setUpLevel{
+    
+}
+
+-(void)restart{
+
+
+    
+}
 -(void)endGame{
 
     NSLog(@"endGAME");
@@ -158,7 +175,7 @@
     [self addChild:menuBackground];
     
     //Sets next level Button
-    SKSpriteNode* nextButton = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.scene.size.width/3, self.scene.size.width/8)];
+    SKSpriteNode* nextButton = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(self.scene.size.width/3, self.scene.size.width/8)];
     nextButton.position = CGPointMake(CGRectGetMidX(self.frame)/2, CGRectGetMidY(self.frame));
     nextButton.zPosition = 6;
     nextButton.name = @"nextLevelButton";

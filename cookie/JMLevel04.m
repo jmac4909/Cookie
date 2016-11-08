@@ -7,7 +7,7 @@
 //
 
 #import "JMLevel04.h"
-
+#import "JMLevel05.h"
 @implementation JMLevel04
 
 -(void)didMoveToView:(SKView *)view{
@@ -28,6 +28,9 @@
     SKSpriteNode *bottomLayer = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(self.size.width, 10)];
     bottomLayer.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:bottomLayer.frame];
     bottomLayer.physicsBody.affectedByGravity = NO;
+    bottomLayer.physicsBody.categoryBitMask = floorCategory;
+    bottomLayer.physicsBody.contactTestBitMask = cookieCategory;
+    bottomLayer.physicsBody.collisionBitMask = cookieCategory;
     [bottomLayer setPosition:CGPointMake(self.scene.size.width/2, self.scene.size.height/10)];
     [self addChild:bottomLayer];
     //**** End bottom sprite
@@ -134,7 +137,16 @@
 -(void)nextLevelButtonPress{
     
     
+    NSLog(@"nextLevelButton");
+    JMLevel05 *scene = [[JMLevel05 alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
     
+}
+
+-(void)restart{
+    
+    JMLevel04 *scene = [[JMLevel04 alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
     
 }
 

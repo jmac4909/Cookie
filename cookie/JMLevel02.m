@@ -8,6 +8,7 @@
 
 #import "JMLevel02.h"
 #import "JMLevel01.h"
+#import "JMLevel03.h"
 @implementation JMLevel02
 
 -(void)didMoveToView:(SKView *)view{
@@ -27,6 +28,9 @@
     SKSpriteNode *bottomLayer = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(self.size.width, 10)];
     bottomLayer.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:bottomLayer.frame];
     bottomLayer.physicsBody.affectedByGravity = NO;
+    bottomLayer.physicsBody.categoryBitMask = floorCategory;
+    bottomLayer.physicsBody.contactTestBitMask = cookieCategory;
+    bottomLayer.physicsBody.collisionBitMask = cookieCategory;
     [bottomLayer setPosition:CGPointMake(self.scene.size.width/2, self.scene.size.height/10)];
     [self addChild:bottomLayer];
     //**** End bottom sprite
@@ -71,6 +75,18 @@
 }
 -(void)addWalls{
     
+    //Wall
+    JMWall *wall = [[JMWall alloc]initWithSize:CGSizeMake(80, 20) withStringNamed:@"woodLog"];
+    wall.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/3);
+    wall.physicsBody.categoryBitMask = wallCategory;
+    wall.physicsBody.contactTestBitMask = cookieCategory;
+    wall.physicsBody.collisionBitMask = cookieCategory;
+    if (wall.parent == nil) {
+        [self addChild:wall];
+        
+    }
+
+    
 }
 -(void)endGame{
     
@@ -90,7 +106,13 @@
     
     NSLog(@"next press");
 
-    JMLevel01 *scene = [[JMLevel01 alloc]initWithSize:self.size];
+    JMLevel03 *scene = [[JMLevel03 alloc]initWithSize:self.size];
+    [self.view presentScene:scene];
+    
+}
+-(void)restart{
+    
+    JMLevel02 *scene = [[JMLevel02 alloc]initWithSize:self.size];
     [self.view presentScene:scene];
     
 }
