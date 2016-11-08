@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		27259CB51DCFC9FE00885410 /* JMLevel03.m in Sources */ = {isa = PBXBuildFile; fileRef = 27259CB41DCFC9FE00885410 /* JMLevel03.m */; };
 		27CD599C1DCFD03C009787EF /* JMLevel04.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CD599B1DCFD03C009787EF /* JMLevel04.m */; };
+		27DF7DB81DD19E0E00995CEA /* JMLevel05.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DF7DB71DD19E0E00995CEA /* JMLevel05.m */; };
+		27DF7DBF1DD19ED100995CEA /* JMLevel06.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DF7DBE1DD19ED100995CEA /* JMLevel06.m */; };
+		27DF7DC21DD19EF100995CEA /* JMLevel07.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DF7DC11DD19EF100995CEA /* JMLevel07.m */; };
+		27DF7DC51DD19F0700995CEA /* JMLevel08.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DF7DC41DD19F0700995CEA /* JMLevel08.m */; };
 		3F2999AB1BC46F6200D99A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AA1BC46F6200D99A54 /* main.m */; };
 		3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AD1BC46F6200D99A54 /* AppDelegate.m */; };
 		3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999B51BC46F6200D99A54 /* GameViewController.m */; };
@@ -53,6 +57,14 @@
 		27259CB41DCFC9FE00885410 /* JMLevel03.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel03.m; sourceTree = "<group>"; };
 		27CD599A1DCFD03C009787EF /* JMLevel04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel04.h; sourceTree = "<group>"; };
 		27CD599B1DCFD03C009787EF /* JMLevel04.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel04.m; sourceTree = "<group>"; };
+		27DF7DB61DD19E0E00995CEA /* JMLevel05.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel05.h; sourceTree = "<group>"; };
+		27DF7DB71DD19E0E00995CEA /* JMLevel05.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel05.m; sourceTree = "<group>"; };
+		27DF7DBD1DD19ED100995CEA /* JMLevel06.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel06.h; sourceTree = "<group>"; };
+		27DF7DBE1DD19ED100995CEA /* JMLevel06.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel06.m; sourceTree = "<group>"; };
+		27DF7DC01DD19EF100995CEA /* JMLevel07.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel07.h; sourceTree = "<group>"; };
+		27DF7DC11DD19EF100995CEA /* JMLevel07.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel07.m; sourceTree = "<group>"; };
+		27DF7DC31DD19F0700995CEA /* JMLevel08.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMLevel08.h; sourceTree = "<group>"; };
+		27DF7DC41DD19F0700995CEA /* JMLevel08.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMLevel08.m; sourceTree = "<group>"; };
 		3F2999A61BC46F6200D99A54 /* cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2999AA1BC46F6200D99A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F2999AC1BC46F6200D99A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +154,42 @@
 			name = JMStar;
 			sourceTree = "<group>";
 		};
+		27DF7DB91DD19E1E00995CEA /* Level 05 */ = {
+			isa = PBXGroup;
+			children = (
+				27DF7DB61DD19E0E00995CEA /* JMLevel05.h */,
+				27DF7DB71DD19E0E00995CEA /* JMLevel05.m */,
+			);
+			name = "Level 05";
+			sourceTree = "<group>";
+		};
+		27DF7DBA1DD19E6900995CEA /* Level 06 */ = {
+			isa = PBXGroup;
+			children = (
+				27DF7DBD1DD19ED100995CEA /* JMLevel06.h */,
+				27DF7DBE1DD19ED100995CEA /* JMLevel06.m */,
+			);
+			name = "Level 06";
+			sourceTree = "<group>";
+		};
+		27DF7DBB1DD19E8C00995CEA /* Level 07 */ = {
+			isa = PBXGroup;
+			children = (
+				27DF7DC01DD19EF100995CEA /* JMLevel07.h */,
+				27DF7DC11DD19EF100995CEA /* JMLevel07.m */,
+			);
+			name = "Level 07";
+			sourceTree = "<group>";
+		};
+		27DF7DBC1DD19EA800995CEA /* Level 08 */ = {
+			isa = PBXGroup;
+			children = (
+				27DF7DC31DD19F0700995CEA /* JMLevel08.h */,
+				27DF7DC41DD19F0700995CEA /* JMLevel08.m */,
+			);
+			name = "Level 08";
+			sourceTree = "<group>";
+		};
 		3F29999D1BC46F6200D99A54 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +263,10 @@
 				3FDC3CBF1C2DA92900EE6FC6 /* Level 02 */,
 				27259CB21DCFC9DF00885410 /* Level 03 */,
 				27CD599D1DCFD043009787EF /* Level 04 */,
+				27DF7DB91DD19E1E00995CEA /* Level 05 */,
+				27DF7DBA1DD19E6900995CEA /* Level 06 */,
+				27DF7DBB1DD19E8C00995CEA /* Level 07 */,
+				27DF7DBC1DD19EA800995CEA /* Level 08 */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -448,16 +500,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DF7DC21DD19EF100995CEA /* JMLevel07.m in Sources */,
 				3FE2C6241C2C9AF100D6CC39 /* JMStar.m in Sources */,
+				27DF7DB81DD19E0E00995CEA /* JMLevel05.m in Sources */,
 				27259CB51DCFC9FE00885410 /* JMLevel03.m in Sources */,
 				3FF09B991C8CC9C2007055BB /* JMLevelSelect.m in Sources */,
 				3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */,
+				27DF7DBF1DD19ED100995CEA /* JMLevel06.m in Sources */,
 				3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */,
 				3FDC3CC21C2DA94300EE6FC6 /* JMLevel02.m in Sources */,
 				3FF09BA01C8CD2AA007055BB /* JMScrollableNode.m in Sources */,
 				3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */,
 				3FDC3CBB1C2D9F7A00EE6FC6 /* JMBasicLevel.m in Sources */,
 				27CD599C1DCFD03C009787EF /* JMLevel04.m in Sources */,
+				27DF7DC51DD19F0700995CEA /* JMLevel08.m in Sources */,
 				3FDC3CBE1C2D9FCD00EE6FC6 /* JMLevel01.m in Sources */,
 				3F2999AB1BC46F6200D99A54 /* main.m in Sources */,
 			);

@@ -11,6 +11,10 @@
 #import "JMLevel02.h"
 #import "JMLevel03.h"
 #import "JMLevel04.h"
+#import "JMLevel05.h"
+#import "JMLevel06.h"
+#import "JMLevel07.h"
+#import "JMLevel08.h"
 
 
 
@@ -23,6 +27,10 @@
     JMScrollableNode *level2;
     JMScrollableNode *level3;
     JMScrollableNode *level4;
+    JMScrollableNode *level5;
+    JMScrollableNode *level6;
+    JMScrollableNode *level7;
+    JMScrollableNode *level8;
     UIScrollView *scrollViewMenu;
 }
 
@@ -92,6 +100,46 @@
     level4.name = @"level4";
     level4.zPosition = 1;
     [self addChild:level4];
+    
+    level5 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level5 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level5.anchorPoint = CGPointZero;
+    level5.position = CGPointMake(level5.size.width*2.6, level5.size.height * 6 );
+    level5.userInteractionEnabled = NO;
+    level5.name = @"level5";
+    level5.zPosition = 1;
+    [self addChild:level5];
+    
+    level6 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level6 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level6.anchorPoint = CGPointZero;
+    level6.position = CGPointMake(level6.size.width*3.2, level6.size.height * 7.5 );
+    level6.userInteractionEnabled = NO;
+    level6.name = @"level6";
+    level6.zPosition = 1;
+    [self addChild:level6];
+    
+    level7 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level7 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level7.anchorPoint = CGPointZero;
+    level7.position = CGPointMake(level7.size.width*3.45, level7.size.height * 9 );
+    level7.userInteractionEnabled = NO;
+    level7.name = @"level7";
+    level7.zPosition = 1;
+    [self addChild:level7];
+    
+    level8 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level8 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level8.anchorPoint = CGPointZero;
+    level8.position = CGPointMake(level8.size.width*3.37, level8.size.height * 10.5 );
+    level8.userInteractionEnabled = NO;
+    level8.name = @"level8";
+    level8.zPosition = 1;
+    [self addChild:level8];
+
+
+
+
 
 
 }
@@ -105,6 +153,10 @@
     level2.contentOffset = scrollView.contentOffset;
     level3.contentOffset = scrollView.contentOffset;
     level4.contentOffset = scrollView.contentOffset;
+    level5.contentOffset = scrollView.contentOffset;
+    level6.contentOffset = scrollView.contentOffset;
+    level7.contentOffset = scrollView.contentOffset;
+    level8.contentOffset = scrollView.contentOffset;
 
 }
 
@@ -142,7 +194,38 @@
         // Present the scene.
         [self.view presentScene:JMlevel4];
         
+    }else if ([node.name isEqualToString:@"level5"])
+    {
+        JMLevel05 *JMlevel5 = [[JMLevel05 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        // Present the scene.
+        [self.view presentScene:JMlevel5];
+        
+    }else if ([node.name isEqualToString:@"level6"])
+    {
+        JMLevel06 *JMlevel6 = [[JMLevel06 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        // Present the scene.
+        [self.view presentScene:JMlevel6];
+        
+    }else if ([node.name isEqualToString:@"level7"])
+    {
+        JMLevel07 *JMlevel7 = [[JMLevel07 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        // Present the scene.
+        [self.view presentScene:JMlevel7];
+        
     }
+    else if ([node.name isEqualToString:@"level8"])
+    {
+        JMLevel08 *JMlevel8 = [[JMLevel08 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        // Present the scene.
+        [self.view presentScene:JMlevel8];
+        
+    }
+
+
 }
 
 - (void)willMoveFromView:(SKView *)view{
