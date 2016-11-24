@@ -7,14 +7,7 @@
 //
 
 #import "JMLevelSelect.h"
-#import "JMLevel01.h"
-#import "JMLevel02.h"
-#import "JMLevel03.h"
-#import "JMLevel04.h"
-#import "JMLevel05.h"
-#import "JMLevel06.h"
-#import "JMLevel07.h"
-#import "JMLevel08.h"
+#import "JMCookieLevel.h"
 
 
 
@@ -268,7 +261,7 @@
     level19.anchorPoint = CGPointZero;
     level19.position = CGPointMake(level19.size.width*3.15, level19.size.height * 27 );
     level19.userInteractionEnabled = NO;
-    level19.name = @"level16";
+    level19.name = @"level19";
     level19.zPosition = 1;
     [self addChild:level19];
     [self addLabelToButton:level19 withText:@"19"];
@@ -278,7 +271,7 @@
     level20.anchorPoint = CGPointZero;
     level20.position = CGPointMake(level20.size.width*2.9, level20.size.height * 28.5 );
     level20.userInteractionEnabled = NO;
-    level20.name = @"level7";
+    level20.name = @"level20";
     level20.zPosition = 1;
     [self addChild:level20];
     [self addLabelToButton:level20 withText:@"20"];
@@ -292,11 +285,13 @@
 
 -(void)addLabelToButton:(SKSpriteNode *)button withText: (NSString* )text{
     
-    
+    NSString *labelText = [NSString stringWithFormat:@"level%@",text];
     SKLabelNode *label = [SKLabelNode labelNodeWithText:text];
     [label setPosition:CGPointMake(button.frame.size.width/2, button.frame.size.height/2)];
     [label setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
     [label setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+    label.userInteractionEnabled = NO;
+    label.name = labelText;
     label.zPosition = button.zPosition + 1;
     [button addChild:label];
     
@@ -334,64 +329,64 @@
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
-    
+    JMCookieLevel *level = [[JMCookieLevel alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+
     if([node.name isEqualToString:@"level1"])
     {
 
-        JMLevel01 *JMlevel1 = [[JMLevel01 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        level.currentLevel = 1;
+        [self.view presentScene:level];
 
-        // Present the scene.
-        [self.view presentScene:JMlevel1];
 
     }else if ([node.name isEqualToString:@"level2"])
     {
-        JMLevel02 *JMlevel2 = [[JMLevel02 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
-        
-        // Present the scene.
-        [self.view presentScene:JMlevel2];
-        
+        level.currentLevel = 2;
+        [self.view presentScene:level];
+
     }else if ([node.name isEqualToString:@"level3"])
     {
-        JMLevel03 *JMlevel3 = [[JMLevel03 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
-        
-        // Present the scene.
-        [self.view presentScene:JMlevel3];
+        level.currentLevel = 3;
+        [self.view presentScene:level];
+
         
     }else if ([node.name isEqualToString:@"level4"])
     {
-        JMLevel04 *JMlevel4 = [[JMLevel04 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
-        
-        // Present the scene.
-        [self.view presentScene:JMlevel4];
+        level.currentLevel = 4;
+        [self.view presentScene:level];
+
         
     }else if ([node.name isEqualToString:@"level5"])
     {
-        JMLevel05 *JMlevel5 = [[JMLevel05 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
-        
-        // Present the scene.
-        [self.view presentScene:JMlevel5];
+        level.currentLevel = 5;
+        [self.view presentScene:level];
+
         
     }else if ([node.name isEqualToString:@"level6"])
     {
-        JMLevel06 *JMlevel6 = [[JMLevel06 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        level.currentLevel = 6;
+        [self.view presentScene:level];
         
-        // Present the scene.
-        [self.view presentScene:JMlevel6];
         
     }else if ([node.name isEqualToString:@"level7"])
     {
-        JMLevel07 *JMlevel7 = [[JMLevel07 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        level.currentLevel = 7;
+        [self.view presentScene:level];
         
-        // Present the scene.
-        [self.view presentScene:JMlevel7];
         
     }
     else if ([node.name isEqualToString:@"level8"])
     {
-        JMLevel08 *JMlevel8 = [[JMLevel08 alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
+        level.currentLevel = 8;
+        [self.view presentScene:level];
+
         
-        // Present the scene.
-        [self.view presentScene:JMlevel8];
+        
+    }else if ([node.name isEqualToString:@"level9"])
+    {
+        level.currentLevel = 9;
+        [self.view presentScene:level];
+        
+        
         
     }
 

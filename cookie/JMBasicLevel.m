@@ -8,7 +8,11 @@
 #import "JMLevelSelect.h"
 #import "JMBasicLevel.h"
 
-@implementation JMBasicLevel
+@implementation JMBasicLevel{
+    
+  //  SKSpriteNode *cookieSprite;
+    
+}
 
 #pragma mark - World Methods
 -(void)didMoveToView:(SKView *)view {
@@ -28,12 +32,16 @@
     self.physicsWorld.contactDelegate = self; //Alows for collision detection
     gameOver = false;
     canGetStars = false;
-    
-    
     //**** End Scene Set up
     
     spriteAtlas = [self textureAtlasNamed:@"sprites"];
 
+    //Sets Backgound
+    SKSpriteNode* background = [SKSpriteNode spriteNodeWithTexture:[spriteAtlas textureNamed:@"bg"]];
+    background.size = self.frame.size;
+    background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    background.zPosition = -5;
+    [self addChild:background];
     
     
 }
@@ -50,7 +58,6 @@
 #pragma mark - Touch Events
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    //Make cookie class and add that bool
     
     UITouch *touch = [touches anyObject];
     startTime = touch.timestamp;
@@ -131,7 +138,11 @@
 
     if ((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == wallCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == wallCategory)){
 
-        canGetStars = true;
+        if (canGetStars == false) {
+            
+            canGetStars = true;
+
+        }
     }
     
     //Cookie Hits Floor
@@ -145,7 +156,106 @@
     
     
 }
-#pragma mark - Game Methods
+#pragma mark - Adding Methods
+
+-(void)createCookie:(CGPoint)cookieLocation{
+    //**** Cookie sprite *****
+    cookieSprite = [[SKSpriteNode alloc]initWithTexture:[spriteAtlas textureNamed:@"cookiePlayer.png"]];
+    
+    [cookieSprite setSize:CGSizeMake(cookieSprite.frame.size.width*(1-.120000), cookieSprite.frame.size.height*(1-.120000))];
+    cookieSprite.position = cookieLocation;
+    cookieSprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:cookieSprite.frame.size.width/2];
+    cookieSprite.physicsBody.affectedByGravity = YES;
+    cookieSprite.xScale = 0.17;
+    cookieSprite.yScale = 0.17;
+    cookieSprite.physicsBody.categoryBitMask = cookieCategory;
+    cookieSprite.physicsBody.contactTestBitMask = milkCategory | wallCategory;
+    cookieSprite.physicsBody.collisionBitMask = milkCategory | wallCategory;
+    cookieSprite.zPosition = 0;
+    cookieSprite.physicsBody.dynamic = YES;
+    
+    if (cookieSprite.parent == nil) {
+        [self addChild:cookieSprite];
+        
+    }
+    //***** End cookie sprite *****
+    
+}
+
+-(void)addWalls:(NSArray*)positionArray{
+    
+    // positionArray[0] = X : positionArray[1] = Y
+    for (int x = 0; x<(int)positionArray.count; x+=2) {
+        
+        JMWall *wall = [[JMWall alloc]initWithSize:CGSizeMake(80, 20) withStringNamed:@"woodLog"];
+        wall.position = CGPointMake([positionArray[x] floatValue], [positionArray[x+1] floatValue]);
+        wall.physicsBody.categoryBitMask = wallCategory;
+        wall.physicsBody.contactTestBitMask = cookieCategory;
+        wall.physicsBody.collisionBitMask = cookieCategory;
+        [self addChild:wall];
+            
+        
+        
+        
+    }
+    
+}
+
+-(void)addStars:(NSArray*)positionArray{
+    
+    if (canGetStars == false) {
+        
+        // positionArray[0] = X : positionArray[1] = Y
+        for (int x = 0; x<(int)positionArray.count; x+=2) {
+            JMStar *star = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
+            star.position = CGPointMake([positionArray[x] floatValue], [positionArray[x+1] floatValue]);
+            star.physicsBody.categoryBitMask = starCategory;
+            star.physicsBody.contactTestBitMask = cookieCategory;
+            [self addChild:star];
+            
+            
+            
+            
+            
+            
+        }
+        
+        
+        //        JMStar *star2 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
+        //    star2.position = CGPointMake(self.frame.size.width/9, self.frame.size.height/1.4);
+        //    star2.physicsBody.categoryBitMask = starCategory;
+        //    star2.physicsBody.contactTestBitMask = cookieCategory;
+        //    if (star2.parent == nil) {
+        //        [self addChild:star2];
+        //
+        //    }
+        //    JMStar *star3 = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
+        //    star3.position = CGPointMake(self.frame.size.width/8.8, self.frame.size.height/3.3);
+        //    star3.physicsBody.categoryBitMask = starCategory;
+        //    star3.physicsBody.contactTestBitMask = cookieCategory;
+        //    if (star3.parent == nil) {
+        //        [self addChild:star3];
+        //        
+        //    }
+    }
+    
+}
+
+
+-(void)addFloor{
+    
+    //**** Bottom sprite
+    SKSpriteNode *bottomLayer = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(self.size.width, 10)];
+    bottomLayer.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:bottomLayer.frame];
+    bottomLayer.physicsBody.affectedByGravity = NO;
+    bottomLayer.physicsBody.categoryBitMask = floorCategory;
+    bottomLayer.physicsBody.contactTestBitMask = cookieCategory;
+    bottomLayer.physicsBody.collisionBitMask = cookieCategory;
+    [bottomLayer setPosition:CGPointMake(self.scene.size.width/2, self.scene.size.height/10)];
+    [self addChild:bottomLayer];
+    //**** End bottom sprite
+    
+}
 
 -(void)addStars{
     
@@ -284,11 +394,7 @@
 }
  -(BOOL)cookieOnGround{
     
-    //    if (!sprite.physicsBody.velocity.dy > 0 || !sprite.physicsBody.velocity.dy > -0) {
-    //            return true;
-    //
-    //
-    //    }
+
     if (!gameOver)
     {
         

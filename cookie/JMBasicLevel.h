@@ -50,9 +50,12 @@ static const uint32_t  floorCategory = 0x1 <<4;  //Wall collision category
 -(void)menuButtonPress;
 -(void)endGame;
 -(void)addStars;
--(void)addWalls;
+-(void)addWalls:(NSArray*)positionArray;
 -(void)setUpLevel;
 -(void)restart;
+-(void)createCookie:(CGPoint)cookieLocation;
+-(void)addStars:(NSArray*)positionArray;
+-(void)addFloor;
 
 - (SKTextureAtlas *)textureAtlasNamed:(NSString *)fileName;
 @end
