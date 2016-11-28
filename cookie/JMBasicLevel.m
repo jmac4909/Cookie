@@ -185,9 +185,11 @@
 -(void)addWalls:(NSArray*)positionArray{
     
     // positionArray[0] = X : positionArray[1] = Y
-    for (int x = 0; x<(int)positionArray.count; x+=2) {
+    for (int x = 0; x<(int)positionArray.count; x+=3) {
         
         JMWall *wall = [[JMWall alloc]initWithSize:CGSizeMake(80, 20) withStringNamed:@"woodLog"];
+        float rotation = [positionArray[x+2] floatValue];
+        wall.zRotation = rotation;
         wall.position = CGPointMake([positionArray[x] floatValue], [positionArray[x+1] floatValue]);
         wall.physicsBody.categoryBitMask = wallCategory;
         wall.physicsBody.contactTestBitMask = cookieCategory;
