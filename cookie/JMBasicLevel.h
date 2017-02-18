@@ -13,15 +13,17 @@
 
 #import "JMWall.h"
 #import "JMStar.h"
-
+#import "JMBounceWall.h"
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 
-static const uint32_t cookieCategory = 0x1 <<0;  //cookie collison cattegory
+static const uint32_t  cookieCategory = 0x1 <<0;  //cookie collison cattegory
 static const uint32_t  milkCategory = 0x1 <<1;  //Milk collision category
 static const uint32_t  starCategory = 0x1 <<2;  //Star collision category
 static const uint32_t  wallCategory = 0x1 <<3;  //Wall collision category
-static const uint32_t  floorCategory = 0x1 <<4;  //Wall collision category
+static const uint32_t  floorCategory = 0x1 <<4;  //Floor collision category
+static const uint32_t  bounceWallCategory = 0x1 <<5;  //Bounce Wall collision category
+
 
 
 
@@ -44,6 +46,8 @@ static const uint32_t  floorCategory = 0x1 <<4;  //Wall collision category
     BOOL canGetStars;
     BOOL isTouching;
 }
+
+
 -(void)createMilkAt:(CGPoint)location withScale:(CGFloat)x and: (CGFloat)y;
 -(void)splashMilk;
 -(void)nextLevelButtonPress;
@@ -51,6 +55,7 @@ static const uint32_t  floorCategory = 0x1 <<4;  //Wall collision category
 -(void)endGame;
 -(void)addStars;
 -(void)addWalls:(NSArray*)positionArray;
+-(void)addBounceWalls:(NSArray*)positionArray;
 -(void)setUpLevel;
 -(void)restart;
 -(void)createCookie:(CGPoint)cookieLocation;

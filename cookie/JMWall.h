@@ -8,7 +8,12 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "JMBasicLevel.h"
+
+
 @interface JMWall : SKSpriteNode
+
+
 
 -(JMWall*)initWithSize:(CGSize )size withStringNamed:(NSString*)texture;
 

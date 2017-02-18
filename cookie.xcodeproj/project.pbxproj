@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		270052081DE78403005E5292 /* JMCookieLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 270052071DE78403005E5292 /* JMCookieLevel.m */; };
+		277FB3561E580435000411B3 /* JMBounceWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 277FB3551E580435000411B3 /* JMBounceWall.m */; };
 		3F2999AB1BC46F6200D99A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AA1BC46F6200D99A54 /* main.m */; };
 		3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999AD1BC46F6200D99A54 /* AppDelegate.m */; };
 		3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2999B51BC46F6200D99A54 /* GameViewController.m */; };
@@ -48,6 +49,8 @@
 /* Begin PBXFileReference section */
 		270052061DE78403005E5292 /* JMCookieLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCookieLevel.h; sourceTree = "<group>"; };
 		270052071DE78403005E5292 /* JMCookieLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCookieLevel.m; sourceTree = "<group>"; };
+		277FB3541E580435000411B3 /* JMBounceWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMBounceWall.h; sourceTree = "<group>"; };
+		277FB3551E580435000411B3 /* JMBounceWall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMBounceWall.m; sourceTree = "<group>"; };
 		3F2999A61BC46F6200D99A54 /* cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2999AA1BC46F6200D99A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F2999AC1BC46F6200D99A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		277FB3531E58040F000411B3 /* JMBounceWall */ = {
+			isa = PBXGroup;
+			children = (
+				277FB3541E580435000411B3 /* JMBounceWall.h */,
+				277FB3551E580435000411B3 /* JMBounceWall.m */,
+			);
+			name = JMBounceWall;
+			sourceTree = "<group>";
+		};
 		27CD599E1DCFD1FB009787EF /* JMStar */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +271,7 @@
 		3FFAFE611C2A0E97009E4DFF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				277FB3531E58040F000411B3 /* JMBounceWall */,
 				27CD599E1DCFD1FB009787EF /* JMStar */,
 				3FE2C6211C2C9AB200D6CC39 /* JMWall */,
 			);
@@ -405,6 +418,7 @@
 				3FF09B991C8CC9C2007055BB /* JMLevelSelect.m in Sources */,
 				3F2999B61BC46F6200D99A54 /* GameViewController.m in Sources */,
 				3F2999AE1BC46F6200D99A54 /* AppDelegate.m in Sources */,
+				277FB3561E580435000411B3 /* JMBounceWall.m in Sources */,
 				3FF09BA01C8CD2AA007055BB /* JMScrollableNode.m in Sources */,
 				270052081DE78403005E5292 /* JMCookieLevel.m in Sources */,
 				3FFAFE681C2A3809009E4DFF /* JMWall.m in Sources */,

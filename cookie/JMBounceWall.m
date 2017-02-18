@@ -1,32 +1,34 @@
 //
-//  JMWall.m
+//  JMBounceWall.m
 //  cookie
 //
-//  Created by Jeremy Mackey on 12/22/15.
-//  Copyright © 2015 Jeremy Mackey. All rights reserved.
+//  Created by Jeremy Mackey on 2/17/17.
+//  Copyright © 2017 Jeremy Mackey. All rights reserved.
 //
 
-#import "JMWall.h"
+#import "JMBounceWall.h"
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
-@implementation JMWall
 
--(JMWall*)initWithSize:(CGSize )size withStringNamed:(NSString*)textureName
+@implementation JMBounceWall
+
+-(JMBounceWall*)initWithSize:(CGSize )size withStringNamed:(NSString*)textureName
 {
     SKTextureAtlas *spriteAtlas = [self textureAtlasNamed:@"sprites"];
     SKTexture *wallTexture = [spriteAtlas textureNamed:textureName];
-
-    self = [[JMWall alloc]initWithTexture:wallTexture];
+    
+    self = [[JMBounceWall alloc]initWithTexture:wallTexture];
     [self setSize:size];
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:CGPathCreateWithRoundedRect(self.frame, .01, .01, NULL)];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.pinned = YES;
-    self.physicsBody.categoryBitMask = wallCategory;
+    self.physicsBody.categoryBitMask = bounceWallCategory;
     self.physicsBody.contactTestBitMask = cookieCategory;
     self.physicsBody.collisionBitMask = cookieCategory;
-    
     self.physicsBody.dynamic = YES;
+    self.physicsBody.restitution = 1;
+
     return self;
 }
 
@@ -52,4 +54,5 @@
     
     return textureAtlas;
 }
+
 @end

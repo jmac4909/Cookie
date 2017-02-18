@@ -43,6 +43,9 @@
     
     [super didMoveToView:view];
 
+
+
+    
     scrollBackGround1 = [[JMScrollableNode alloc]initWithImageNamed:@"levelSelectBackground1"];
     [scrollBackGround1 setSize:CGSizeMake(self.scene.size.width*1, self.scene.size.height*2.568216)];
     scrollBackGround1.position = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height);
@@ -277,11 +280,12 @@
     [self addLabelToButton:level20 withText:@"20"];
 
 
-
-
-
+    scrollViewMenu.contentOffset = CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]);
+  //  [scrollViewMenu scrollRectToVisible:level20.frame animated:YES];
 
 }
+
+
 
 -(void)addLabelToButton:(SKSpriteNode *)button withText: (NSString* )text{
     
@@ -323,6 +327,7 @@
     level19.contentOffset = scrollView.contentOffset;
     level20.contentOffset = scrollView.contentOffset;
 
+    [[NSUserDefaults standardUserDefaults]setValue:NSStringFromCGPoint(scrollViewMenu.contentOffset) forKey:@"scrollViewOffset"];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -330,7 +335,7 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     JMCookieLevel *level = [[JMCookieLevel alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
-
+    
     if([node.name isEqualToString:@"level1"])
     {
 
@@ -389,6 +394,30 @@
         
         
     }
+    else if ([node.name isEqualToString:@"level10"])
+    {
+        level.currentLevel = 10;
+        [self.view presentScene:level];
+        
+        
+        
+    }
+    
+    else if ([node.name isEqualToString:@"level11"])
+    {
+        level.currentLevel = 11;
+        [self.view presentScene:level];
+        
+        
+        
+    }else if ([node.name isEqualToString:@"level12"])
+    {
+        level.currentLevel = 12;
+        [self.view presentScene:level];
+        
+        
+        
+    }
 
 
 }
@@ -396,8 +425,9 @@
 - (void)willMoveFromView:(SKView *)view{
     
     [super willMoveFromView:view];
-    
- 
+    [[NSUserDefaults standardUserDefaults]synchronize];
+
+
     scrollViewMenu = nil;
     
 

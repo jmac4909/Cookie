@@ -18,7 +18,7 @@
 -(void)didMoveToView:(SKView *)view {
     
     [super didMoveToView:view];
-    
+
     //****Removes gestures from scrollView****//
     for (UIGestureRecognizer *gr in self.view.gestureRecognizers) {
         [self.view removeGestureRecognizer:gr];
@@ -169,8 +169,8 @@
     cookieSprite.xScale = 0.17;
     cookieSprite.yScale = 0.17;
     cookieSprite.physicsBody.categoryBitMask = cookieCategory;
-    cookieSprite.physicsBody.contactTestBitMask = milkCategory | wallCategory;
-    cookieSprite.physicsBody.collisionBitMask = milkCategory | wallCategory;
+    cookieSprite.physicsBody.contactTestBitMask = milkCategory | wallCategory | bounceWallCategory;
+    cookieSprite.physicsBody.collisionBitMask = milkCategory | wallCategory | bounceWallCategory;
     cookieSprite.zPosition = 0;
     cookieSprite.physicsBody.dynamic = YES;
     
@@ -191,11 +191,25 @@
         float rotation = [positionArray[x+2] floatValue];
         wall.zRotation = rotation;
         wall.position = CGPointMake([positionArray[x] floatValue], [positionArray[x+1] floatValue]);
-        wall.physicsBody.categoryBitMask = wallCategory;
-        wall.physicsBody.contactTestBitMask = cookieCategory;
-        wall.physicsBody.collisionBitMask = cookieCategory;
         [self addChild:wall];
             
+        
+        
+        
+    }
+    
+}
+-(void)addBounceWalls:(NSArray*)positionArray{
+    
+    // positionArray[0] = X : positionArray[1] = Y
+    for (int x = 0; x<(int)positionArray.count; x+=3) {
+        
+        JMBounceWall *wall = [[JMBounceWall alloc]initWithSize:CGSizeMake(80, 20) withStringNamed:@"BounceLog"];
+        float rotation = [positionArray[x+2] floatValue];
+        wall.zRotation = rotation;
+        wall.position = CGPointMake([positionArray[x] floatValue], [positionArray[x+1] floatValue]);
+        [self addChild:wall];
+        
         
         
         
@@ -422,7 +436,7 @@
 }
 -(void)menuButtonPress{
     
-    JMLevelSelect *scene = [[JMLevelSelect alloc]initWithSize:self.size];
+    JMLevelSelect *scene = [[JMLevelSelect alloc]initWithSize:self.size];    
     [self.view presentScene:scene];
 }
 #pragma mark - Helper Methods
