@@ -13,6 +13,7 @@
 {
     CGPoint _unoffsetPosition;
     CGPoint _contentOffset;
+    BOOL _locked;
 }
 @end
 
@@ -22,6 +23,18 @@
 {
     self->_unoffsetPosition = position;
     [self setPosition:self->_unoffsetPosition withOffset:self->_contentOffset];
+}
+
+-(void)setLocked:(bool)locked
+{
+    self->_locked = locked;
+    if (locked) {
+        self.alpha = 0.5;
+
+    }else{
+        self.alpha = 1;
+
+    }
 }
 
 -(CGPoint)position

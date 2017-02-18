@@ -43,7 +43,7 @@
     
     [super didMoveToView:view];
 
-
+    int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
 
     
     scrollBackGround1 = [[JMScrollableNode alloc]initWithImageNamed:@"levelSelectBackground1"];
@@ -90,6 +90,9 @@
     level2.userInteractionEnabled = NO;
     level2.name = @"level2";
     level2.zPosition = 1;
+    if (unlockedLevel < 2) {
+        [level2 setLocked:true];
+    }
     [self addChild:level2];
     [self addLabelToButton:level2 withText:@"2"];
     
@@ -100,6 +103,9 @@
     level3.userInteractionEnabled = NO;
     level3.name = @"level3";
     level3.zPosition = 1;
+    if (unlockedLevel < 3) {
+        [level3 setLocked:true];
+    }
     [self addChild:level3];
     [self addLabelToButton:level3 withText:@"3"];
 
@@ -111,6 +117,9 @@
     level4.userInteractionEnabled = NO;
     level4.name = @"level4";
     level4.zPosition = 1;
+    if (unlockedLevel < 4) {
+        [level4 setLocked:true];
+    }
     [self addChild:level4];
     [self addLabelToButton:level4 withText:@"4"];
 
@@ -122,6 +131,9 @@
     level5.userInteractionEnabled = NO;
     level5.name = @"level5";
     level5.zPosition = 1;
+    if (unlockedLevel < 5) {
+        [level5 setLocked:true];
+    }
     [self addChild:level5];
     [self addLabelToButton:level5 withText:@"5"];
 
@@ -133,6 +145,9 @@
     level6.userInteractionEnabled = NO;
     level6.name = @"level6";
     level6.zPosition = 1;
+    if (unlockedLevel < 6) {
+        [level6 setLocked:true];
+    }
     [self addChild:level6];
     [self addLabelToButton:level6 withText:@"6"];
 
@@ -144,6 +159,9 @@
     level7.userInteractionEnabled = NO;
     level7.name = @"level7";
     level7.zPosition = 1;
+    if (unlockedLevel < 7) {
+        [level7 setLocked:true];
+    }
     [self addChild:level7];
     [self addLabelToButton:level7 withText:@"7"];
 
@@ -155,6 +173,9 @@
     level8.userInteractionEnabled = NO;
     level8.name = @"level8";
     level8.zPosition = 1;
+    if (unlockedLevel < 8) {
+        [level8 setLocked:true];
+    }
     [self addChild:level8];
     [self addLabelToButton:level8 withText:@"8"];
 
@@ -166,6 +187,9 @@
     level9.userInteractionEnabled = NO;
     level9.name = @"level9";
     level9.zPosition = 1;
+    if (unlockedLevel < 9) {
+        [level9 setLocked:true];
+    }
     [self addChild:level9];
     [self addLabelToButton:level9 withText:@"9"];
     
@@ -176,6 +200,9 @@
     level10.userInteractionEnabled = NO;
     level10.name = @"level10";
     level10.zPosition = 1;
+    if (unlockedLevel < 10) {
+        [level10 setLocked:true];
+    }
     [self addChild:level10];
     [self addLabelToButton:level10 withText:@"10"];
     
@@ -186,6 +213,9 @@
     level11.userInteractionEnabled = NO;
     level11.name = @"level11";
     level11.zPosition = 1;
+    if (unlockedLevel < 11) {
+        [level11 setLocked:true];
+    }
     [self addChild:level11];
     [self addLabelToButton:level11 withText:@"11"];
     
@@ -196,6 +226,9 @@
     level12.userInteractionEnabled = NO;
     level12.name = @"level12";
     level12.zPosition = 1;
+    if (unlockedLevel < 12) {
+        [level12 setLocked:true];
+    }
     [self addChild:level12];
     [self addLabelToButton:level12 withText:@"12"];
     
@@ -206,6 +239,9 @@
     level13.userInteractionEnabled = NO;
     level13.name = @"level13";
     level13.zPosition = 1;
+    if (unlockedLevel < 13) {
+        [level13 setLocked:true];
+    }
     [self addChild:level13];
     [self addLabelToButton:level13 withText:@"13"];
     
@@ -216,6 +252,9 @@
     level14.userInteractionEnabled = NO;
     level14.name = @"level4";
     level14.zPosition = 1;
+    if (unlockedLevel < 14) {
+        [level14 setLocked:true];
+    }
     [self addChild:level14];
     [self addLabelToButton:level14 withText:@"14"];
 
@@ -226,6 +265,9 @@
     level15.userInteractionEnabled = NO;
     level15.name = @"level15";
     level15.zPosition = 1;
+    if (unlockedLevel < 15) {
+        [level15 setLocked:true];
+    }
     [self addChild:level15];
     [self addLabelToButton:level15 withText:@"15"];
     
@@ -236,6 +278,9 @@
     level16.userInteractionEnabled = NO;
     level16.name = @"level16";
     level16.zPosition = 1;
+    if (unlockedLevel < 16) {
+        [level16 setLocked:true];
+    }
     [self addChild:level16];
     [self addLabelToButton:level16 withText:@"16"];
     
@@ -246,6 +291,9 @@
     level17.userInteractionEnabled = NO;
     level17.name = @"level7";
     level17.zPosition = 1;
+    if (unlockedLevel < 17) {
+        [level17 setLocked:true];
+    }
     [self addChild:level17];
     [self addLabelToButton:level17 withText:@"17"];
     
@@ -256,6 +304,9 @@
     level18.userInteractionEnabled = NO;
     level18.name = @"level18";
     level18.zPosition = 1;
+    if (unlockedLevel < 18) {
+        [level18 setLocked:true];
+    }
     [self addChild:level18];
     [self addLabelToButton:level18 withText:@"18"];
     
@@ -266,6 +317,9 @@
     level19.userInteractionEnabled = NO;
     level19.name = @"level19";
     level19.zPosition = 1;
+    if (unlockedLevel < 19) {
+        [level19 setLocked:true];
+    }
     [self addChild:level19];
     [self addLabelToButton:level19 withText:@"19"];
     
@@ -276,12 +330,15 @@
     level20.userInteractionEnabled = NO;
     level20.name = @"level20";
     level20.zPosition = 1;
+    if (unlockedLevel < 20) {
+        [level20 setLocked:true];
+    }
     [self addChild:level20];
     [self addLabelToButton:level20 withText:@"20"];
 
 
     scrollViewMenu.contentOffset = CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]);
-  //  [scrollViewMenu scrollRectToVisible:level20.frame animated:YES];
+   // [scrollViewMenu setContentOffset:CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]) animated:true];
 
 }
 
@@ -336,60 +393,61 @@
     SKNode *node = [self nodeAtPoint:location];
     JMCookieLevel *level = [[JMCookieLevel alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
     
+    int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
+
+    
     if([node.name isEqualToString:@"level1"])
     {
 
         level.currentLevel = 1;
-        [self.view presentScene:level];
 
 
     }else if ([node.name isEqualToString:@"level2"])
     {
         level.currentLevel = 2;
-        [self.view presentScene:level];
 
     }else if ([node.name isEqualToString:@"level3"])
     {
         level.currentLevel = 3;
-        [self.view presentScene:level];
 
+        
         
     }else if ([node.name isEqualToString:@"level4"])
     {
         level.currentLevel = 4;
-        [self.view presentScene:level];
 
+        
         
     }else if ([node.name isEqualToString:@"level5"])
     {
         level.currentLevel = 5;
-        [self.view presentScene:level];
 
+        
         
     }else if ([node.name isEqualToString:@"level6"])
     {
         level.currentLevel = 6;
-        [self.view presentScene:level];
+
         
         
     }else if ([node.name isEqualToString:@"level7"])
     {
         level.currentLevel = 7;
-        [self.view presentScene:level];
+
         
         
     }
     else if ([node.name isEqualToString:@"level8"])
     {
         level.currentLevel = 8;
-        [self.view presentScene:level];
 
+        
         
         
     }else if ([node.name isEqualToString:@"level9"])
     {
         level.currentLevel = 9;
-        [self.view presentScene:level];
+
         
         
         
@@ -397,7 +455,7 @@
     else if ([node.name isEqualToString:@"level10"])
     {
         level.currentLevel = 10;
-        [self.view presentScene:level];
+
         
         
         
@@ -406,17 +464,31 @@
     else if ([node.name isEqualToString:@"level11"])
     {
         level.currentLevel = 11;
-        [self.view presentScene:level];
+
         
         
         
-    }else if ([node.name isEqualToString:@"level12"])
+    }
+    else if ([node.name isEqualToString:@"level12"])
     {
         level.currentLevel = 12;
+
+        
+        
+        
+    }
+    else if ([node.name isEqualToString:@"level13"])
+    {
+        level.currentLevel = 13;
+
+        
+        
+        
+    }
+
+    if (level.currentLevel <= unlockedLevel && level.currentLevel > 0) {
         [self.view presentScene:level];
-        
-        
-        
+
     }
 
 

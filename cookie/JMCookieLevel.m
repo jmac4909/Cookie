@@ -90,7 +90,7 @@
             
         case 13:
             
-            [self setLevel10];
+            [self setLevel13];
             
             break;
             
@@ -129,7 +129,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -165,7 +165,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -200,7 +200,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -236,7 +236,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -278,7 +278,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -314,7 +314,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -350,7 +350,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -389,7 +389,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -429,7 +429,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -469,7 +469,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -509,7 +509,7 @@
     [self addWalls:wallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -532,7 +532,7 @@
     [self createCookie:CGPointMake(self.frame.size.width/2, self.frame.size.height/1.2)];
     
     //Adds Milk
-    [self createMilkAt:CGPointMake(self.frame.size.width/1.2, self.frame.size.height/1.6) withScale:.6 and:.5];
+    [self createMilkAt:CGPointMake(self.frame.size.width/1.15, self.frame.size.height/1.6) withScale:.6 and:.5];
     
     //Adds Walls
     //X and Y of walls
@@ -554,7 +554,7 @@
     [self addBounceWalls:bounceWallArray];
     
     //Adds floor
-    [self addFloor];
+    [self addExtras];
     
     //Add Stars
     //X and Y of stars
@@ -572,6 +572,51 @@
     
 
 }
+-(void)setLevel13{
+    //Adds Cookie
+    [self createCookie:CGPointMake(self.frame.size.width/1.4, self.frame.size.height/1.2)];
+    
+    //Adds Milk
+    [self createMilkAt:CGPointMake(self.frame.size.width/6.8, self.frame.size.height/4) withScale:.6 and:.5];
+    
+    //Adds Walls
+    //X and Y of walls
+
+    
+    NSNumber *wx2Value = [NSNumber numberWithFloat:self.frame.size.width/4.6];
+    NSNumber *wy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    NSNumber *w2Rotation = [NSNumber numberWithFloat:1.5708];
+    
+    NSNumber *wx3Value = [NSNumber numberWithFloat:self.frame.size.width/1.4];
+    NSNumber *wy3Value = [NSNumber numberWithFloat:self.frame.size.height/2];
+    NSNumber *w3Rotation = [NSNumber numberWithFloat:0];
+    
+
+    
+
+    
+    NSArray *wallArray = [NSArray arrayWithObjects:wx3Value,wy3Value,w3Rotation,wx2Value,wy2Value,w2Rotation, nil];
+    [self addWalls:wallArray];
+    
+    //Adds floor
+    [self addExtras];
+    
+    //Add Stars
+    //X and Y of stars
+    NSNumber *sx1Value = [NSNumber numberWithFloat:self.frame.size.width/3];
+    NSNumber *sy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    
+    NSNumber *sx2Value = [NSNumber numberWithFloat:self.frame.size.width/7.5];
+    NSNumber *sy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    
+    NSNumber *sx3Value = [NSNumber numberWithFloat:self.frame.size.width/6.8];
+    NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/2];
+    
+    NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
+    [self addStars:starArray];
+    
+    
+}
 
 
 #pragma mark - Game methods
@@ -583,6 +628,12 @@
     
 }
 -(void)endGame{
+    if ([[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] < self.currentLevel+1) {
+        [[NSUserDefaults standardUserDefaults]setInteger:self.currentLevel+1 forKey:@"unlockedLevels"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+
+    }
+
     [super endGame];
 }
 -(void)menuButtonPress{
@@ -594,6 +645,7 @@
     
     JMCookieLevel *scene = [[JMCookieLevel alloc]initWithSize:self.size];
     scene.currentLevel = self.currentLevel + 1;
+    NSLog(@"%d",self.currentLevel+1);
     [self.view presentScene:scene];
     
 }

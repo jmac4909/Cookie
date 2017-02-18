@@ -60,7 +60,7 @@ static const uint32_t  bounceWallCategory = 0x1 <<5;  //Bounce Wall collision ca
 -(void)restart;
 -(void)createCookie:(CGPoint)cookieLocation;
 -(void)addStars:(NSArray*)positionArray;
--(void)addFloor;
+-(void)addExtras;
 
 - (SKTextureAtlas *)textureAtlasNamed:(NSString *)fileName;
 @end

@@ -65,6 +65,10 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
 
+    if ([node.name isEqualToString:@"retryButton"]) {
+        [self restart];
+    }
+    
     if ([cookieSprite containsPoint:location] && [self cookieOnGround]) {
         touchPoint = location;
         isTouching = true;
@@ -258,7 +262,7 @@
 }
 
 
--(void)addFloor{
+-(void)addExtras{
     
     //**** Bottom sprite
     SKSpriteNode *bottomLayer = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(self.size.width, 10)];
@@ -267,9 +271,15 @@
     bottomLayer.physicsBody.categoryBitMask = floorCategory;
     bottomLayer.physicsBody.contactTestBitMask = cookieCategory;
     bottomLayer.physicsBody.collisionBitMask = cookieCategory;
-    [bottomLayer setPosition:CGPointMake(self.scene.size.width/2, self.scene.size.height/10)];
+    [bottomLayer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.height/10)];
     [self addChild:bottomLayer];
     //**** End bottom sprite
+    
+    SKSpriteNode *retryButton = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(80, 30)];
+    [retryButton setPosition:CGPointMake(self.frame.size.width/7, self.frame.size.height/20)];
+    retryButton.name = @"retryButton";
+    [self addChild:retryButton];
+    
     
 }
 
@@ -313,6 +323,13 @@
     menuButton.zPosition = 6;
     menuButton.name = @"menuButton";
     [self addChild:menuButton];
+    
+    SKSpriteNode *retryButton = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(300, 70)];
+    [retryButton setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.height/3)];
+    retryButton.zPosition = 6;
+    retryButton.name = @"retryButton";
+    [self addChild:retryButton];
+    
 
 
 

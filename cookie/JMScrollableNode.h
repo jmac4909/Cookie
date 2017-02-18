@@ -11,6 +11,7 @@
 @interface JMScrollableNode : SKSpriteNode
 
 @property (nonatomic) CGPoint contentOffset;
+-(void)setLocked:(bool)locked;
 
 
 @end
