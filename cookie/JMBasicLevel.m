@@ -11,14 +11,15 @@
 @implementation JMBasicLevel{
     
   //  SKSpriteNode *cookieSprite;
-    
 }
 
 #pragma mark - World Methods
 -(void)didMoveToView:(SKView *)view {
     
     [super didMoveToView:view];
-
+    
+    starCollectArray = [[NSMutableArray alloc]initWithArray:@[@0,@0,@0]];
+    
     //****Removes gestures from scrollView****//
     for (UIGestureRecognizer *gr in self.view.gestureRecognizers) {
         [self.view removeGestureRecognizer:gr];
@@ -42,8 +43,19 @@
     background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     background.zPosition = -5;
     [self addChild:background];
-    
-    
+
+    //if theres no stars already saved it wont set the new array to null
+    @try {
+        [starCollectArray replaceObjectAtIndex:0 withObject:[[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"level%d",self.currentLevel]]objectAtIndex:0]];
+        [starCollectArray replaceObjectAtIndex:1 withObject:[[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"level%d",self.currentLevel]]objectAtIndex:1]];
+        [starCollectArray replaceObjectAtIndex:2 withObject:[[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"level%d",self.currentLevel]]objectAtIndex:2]];
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+
+ 
 }
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
@@ -55,6 +67,7 @@
         
     }
 }
+
 #pragma mark - Touch Events
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -120,19 +133,74 @@
     }
    
     
-    //Cookie Hits Star
-    if (((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == starCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == starCategory)) && canGetStars == true)
+    //Cookie Hits Star 1
+    if (((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == starCategory1) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == starCategory1)) && canGetStars == true)
     {
         SKNode *starBody;
-        if (contact.bodyA.categoryBitMask == starCategory) {
+        if (contact.bodyA.categoryBitMask == starCategory1) {
             starBody = contact.bodyA.node;
 
         }else{
             starBody = contact.bodyB.node;
         }
         
+        SKAction *scale = [SKAction scaleTo:2 duration:0.2];
+        SKAction *fadeOut = [SKAction fadeOutWithDuration:0.2];
+        SKAction *group = [SKAction group:@[scale, fadeOut]];
+
+        [starBody runAction:group completion:^{
+            [starCollectArray replaceObjectAtIndex:0 withObject:@1];
+            [starBody removeFromParent];
+            
+        }];
         
-        [starBody removeFromParent];
+        
+    }
+    //Cookie Hits Star 2
+    if (((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == starCategory2) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == starCategory2)) && canGetStars == true)
+    {
+        SKNode *starBody;
+        if (contact.bodyA.categoryBitMask == starCategory2) {
+            starBody = contact.bodyA.node;
+            
+        }else{
+            starBody = contact.bodyB.node;
+        }
+        
+        SKAction *scale = [SKAction scaleTo:2 duration:0.2];
+        SKAction *fadeOut = [SKAction fadeOutWithDuration:0.2];
+        SKAction *group = [SKAction group:@[scale, fadeOut]];
+        
+        [starBody runAction:group completion:^{
+            [starCollectArray replaceObjectAtIndex:1 withObject:@1];
+
+            [starBody removeFromParent];
+            
+        }];
+        
+        
+    }
+    //Cookie Hits Star 3
+    if (((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == starCategory3) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == starCategory3)) && canGetStars == true)
+    {
+        SKNode *starBody;
+        if (contact.bodyA.categoryBitMask == starCategory3) {
+            starBody = contact.bodyA.node;
+            
+        }else{
+            starBody = contact.bodyB.node;
+        }
+        
+        SKAction *scale = [SKAction scaleTo:2 duration:0.2];
+        SKAction *fadeOut = [SKAction fadeOutWithDuration:0.2];
+        SKAction *group = [SKAction group:@[scale, fadeOut]];
+        
+        [starBody runAction:group completion:^{
+            [starCollectArray replaceObjectAtIndex:2 withObject:@1];
+
+            [starBody removeFromParent];
+            
+        }];
         
         
     }
@@ -229,7 +297,20 @@
         for (int x = 0; x<(int)positionArray.count; x+=2) {
             JMStar *star = [[JMStar alloc]initWithSize:CGSizeMake(30, 30) withStringNamed:@"star"];
             star.position = CGPointMake([positionArray[x] floatValue], [positionArray[x+1] floatValue]);
-            star.physicsBody.categoryBitMask = starCategory;
+            
+            if (x/2 == 0) {
+                
+                star.physicsBody.categoryBitMask = starCategory1;
+
+            }else if (x/2 == 1){
+                star.physicsBody.categoryBitMask = starCategory2;
+
+                
+            }else if (x/2 == 2){
+                star.physicsBody.categoryBitMask = starCategory3;
+
+                
+            }
             star.physicsBody.contactTestBitMask = cookieCategory;
             [self addChild:star];
             
@@ -301,7 +382,10 @@
 }
 -(void)endGame{
 
-    NSLog(@"endGAME");
+    //Sync up saved stars
+    [[NSUserDefaults standardUserDefaults]setObject:starCollectArray forKey:[NSString stringWithFormat:@"level%d",self.currentLevel]];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
     //Sets menu Background
     SKSpriteNode* menuBackground = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:self.scene.size];
     menuBackground.size = self.frame.size;

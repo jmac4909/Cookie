@@ -19,7 +19,9 @@
 
 static const uint32_t  cookieCategory = 0x1 <<0;  //cookie collison cattegory
 static const uint32_t  milkCategory = 0x1 <<1;  //Milk collision category
-static const uint32_t  starCategory = 0x1 <<2;  //Star collision category
+static const uint32_t  starCategory1 = 0x1 <<2;  //Star collision category
+static const uint32_t  starCategory2 = 0x1 <<6;  //Star collision category
+static const uint32_t  starCategory3 = 0x1 <<7;  //Star collision category
 static const uint32_t  wallCategory = 0x1 <<3;  //Wall collision category
 static const uint32_t  floorCategory = 0x1 <<4;  //Floor collision category
 static const uint32_t  bounceWallCategory = 0x1 <<5;  //Bounce Wall collision category
@@ -41,10 +43,11 @@ static const uint32_t  bounceWallCategory = 0x1 <<5;  //Bounce Wall collision ca
     SKSpriteNode *topRight;
     SKSpriteNode *cupLine;
     CGPoint cookieStartPoint;
-    int currentLevel;
     BOOL gameOver;
     BOOL canGetStars;
     BOOL isTouching;
+    NSMutableArray *starCollectArray;
+
 }
 
 
@@ -61,6 +64,7 @@ static const uint32_t  bounceWallCategory = 0x1 <<5;  //Bounce Wall collision ca
 -(void)createCookie:(CGPoint)cookieLocation;
 -(void)addStars:(NSArray*)positionArray;
 -(void)addExtras;
+@property (nonatomic) int currentLevel;
 
 - (SKTextureAtlas *)textureAtlasNamed:(NSString *)fileName;
 @end

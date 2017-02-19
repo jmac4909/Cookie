@@ -43,6 +43,7 @@
     
     [super didMoveToView:view];
 
+    
     int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
 
     
@@ -80,9 +81,15 @@
     level1.userInteractionEnabled = NO;
     level1.name = @"level1";
     level1.zPosition = 1;
+    int num = 0;
+    num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level1"] ];
+    [level1 setNumberOfStars:num forLevel:@"level1"];
     [self addChild:level1];
     [self addLabelToButton:level1 withText:@"1"];
 
+    
+    
+    
     level2 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
     [level2 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
     level2.anchorPoint = CGPointZero;
@@ -92,9 +99,17 @@
     level2.zPosition = 1;
     if (unlockedLevel < 2) {
         [level2 setLocked:true];
+        
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level2"] ];
+        [level2 setNumberOfStars:num forLevel:@"level2"];
     }
     [self addChild:level2];
     [self addLabelToButton:level2 withText:@"2"];
+    
+    
+    
     
     level3 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
     [level3 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
@@ -105,10 +120,15 @@
     level3.zPosition = 1;
     if (unlockedLevel < 3) {
         [level3 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level3"] ];
+        [level3 setNumberOfStars:num forLevel:@"level3"];
     }
     [self addChild:level3];
     [self addLabelToButton:level3 withText:@"3"];
 
+    
     
     level4 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
     [level4 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
@@ -119,10 +139,16 @@
     level4.zPosition = 1;
     if (unlockedLevel < 4) {
         [level4 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level4"] ];
+        [level4 setNumberOfStars:num forLevel:@"level4"];
     }
+    
     [self addChild:level4];
     [self addLabelToButton:level4 withText:@"4"];
 
+    
     
     level5 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
     [level5 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
@@ -133,6 +159,10 @@
     level5.zPosition = 1;
     if (unlockedLevel < 5) {
         [level5 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level5"] ];
+        [level5 setNumberOfStars:num forLevel:@"level5"];
     }
     [self addChild:level5];
     [self addLabelToButton:level5 withText:@"5"];
@@ -147,6 +177,11 @@
     level6.zPosition = 1;
     if (unlockedLevel < 6) {
         [level6 setLocked:true];
+    }else{
+        int num = 0;
+
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level6"] ];
+        [level6 setNumberOfStars:num forLevel:@"level6"];
     }
     [self addChild:level6];
     [self addLabelToButton:level6 withText:@"6"];
@@ -161,6 +196,10 @@
     level7.zPosition = 1;
     if (unlockedLevel < 7) {
         [level7 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level7"] ];
+        [level7 setNumberOfStars:num forLevel:@"level7"];
     }
     [self addChild:level7];
     [self addLabelToButton:level7 withText:@"7"];
@@ -175,6 +214,10 @@
     level8.zPosition = 1;
     if (unlockedLevel < 8) {
         [level8 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level8"] ];
+        [level8 setNumberOfStars:num forLevel:@"level8"];
     }
     [self addChild:level8];
     [self addLabelToButton:level8 withText:@"8"];
@@ -189,9 +232,15 @@
     level9.zPosition = 1;
     if (unlockedLevel < 9) {
         [level9 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level9"] ];
+        [level9 setNumberOfStars:num forLevel:@"level9"];
     }
     [self addChild:level9];
     [self addLabelToButton:level9 withText:@"9"];
+    
+    
     
     level10 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
     [level10 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
@@ -202,6 +251,10 @@
     level10.zPosition = 1;
     if (unlockedLevel < 10) {
         [level10 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level10"] ];
+        [level10 setNumberOfStars:num forLevel:@"level10"];
     }
     [self addChild:level10];
     [self addLabelToButton:level10 withText:@"10"];
@@ -215,6 +268,12 @@
     level11.zPosition = 1;
     if (unlockedLevel < 11) {
         [level11 setLocked:true];
+    }else{
+        int num = 0;
+
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level11"] ];
+
+        [level11 setNumberOfStars:num forLevel:@"level11"];
     }
     [self addChild:level11];
     [self addLabelToButton:level11 withText:@"11"];
@@ -228,6 +287,11 @@
     level12.zPosition = 1;
     if (unlockedLevel < 12) {
         [level12 setLocked:true];
+    }else{
+        int num = 0;
+
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level12"] ];
+        [level12 setNumberOfStars:num forLevel:@"level12"];
     }
     [self addChild:level12];
     [self addLabelToButton:level12 withText:@"12"];
@@ -241,6 +305,10 @@
     level13.zPosition = 1;
     if (unlockedLevel < 13) {
         [level13 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level13"] ];
+        [level13 setNumberOfStars:num forLevel:@"level13"];
     }
     [self addChild:level13];
     [self addLabelToButton:level13 withText:@"13"];
@@ -254,6 +322,10 @@
     level14.zPosition = 1;
     if (unlockedLevel < 14) {
         [level14 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level14"] ];
+        [level14 setNumberOfStars:num forLevel:@"level14"];
     }
     [self addChild:level14];
     [self addLabelToButton:level14 withText:@"14"];
@@ -267,6 +339,10 @@
     level15.zPosition = 1;
     if (unlockedLevel < 15) {
         [level15 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level15"] ];
+        [level15 setNumberOfStars:num forLevel:@"level15"];
     }
     [self addChild:level15];
     [self addLabelToButton:level15 withText:@"15"];
@@ -280,6 +356,10 @@
     level16.zPosition = 1;
     if (unlockedLevel < 16) {
         [level16 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level16"] ];
+        [level16 setNumberOfStars:num forLevel:@"level16"];
     }
     [self addChild:level16];
     [self addLabelToButton:level16 withText:@"16"];
@@ -293,6 +373,10 @@
     level17.zPosition = 1;
     if (unlockedLevel < 17) {
         [level17 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level17"] ];
+        [level17 setNumberOfStars:num forLevel:@"level17"];
     }
     [self addChild:level17];
     [self addLabelToButton:level17 withText:@"17"];
@@ -306,6 +390,10 @@
     level18.zPosition = 1;
     if (unlockedLevel < 18) {
         [level18 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level18"] ];
+        [level18 setNumberOfStars:num forLevel:@"level18"];
     }
     [self addChild:level18];
     [self addLabelToButton:level18 withText:@"18"];
@@ -319,6 +407,10 @@
     level19.zPosition = 1;
     if (unlockedLevel < 19) {
         [level19 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level19"] ];
+        [level19 setNumberOfStars:num forLevel:@"level19"];
     }
     [self addChild:level19];
     [self addLabelToButton:level19 withText:@"19"];
@@ -332,6 +424,10 @@
     level20.zPosition = 1;
     if (unlockedLevel < 20) {
         [level20 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level20"] ];
+        [level20 setNumberOfStars:num forLevel:@"level20"];
     }
     [self addChild:level20];
     [self addLabelToButton:level20 withText:@"20"];
@@ -341,7 +437,20 @@
    // [scrollViewMenu setContentOffset:CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]) animated:true];
 
 }
+#warning - may want to fix this bullshit where 1 == 19
+-(int)numberOfStarsCollectedFromArray:(NSArray*)array{
+    
+    int num = 0;
+    for (int i = 0; i < array.count; i++) {
 
+        if ((int)array[i] == 19) {
+            num ++;
+        }
+    }
+
+    return num;
+    
+}
 
 
 -(void)addLabelToButton:(SKSpriteNode *)button withText: (NSString* )text{
@@ -393,7 +502,7 @@
     SKNode *node = [self nodeAtPoint:location];
     JMCookieLevel *level = [[JMCookieLevel alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
     
-    int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
+//    int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
 
     
     if([node.name isEqualToString:@"level1"])
@@ -486,7 +595,7 @@
         
     }
 
-    if (level.currentLevel <= unlockedLevel && level.currentLevel > 0) {
+    if ( level.currentLevel > 0) {
         [self.view presentScene:level];
 
     }

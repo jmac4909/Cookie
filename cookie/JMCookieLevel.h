@@ -9,6 +9,5 @@
 #import "JMBasicLevel.h"
 
 @interface JMCookieLevel : JMBasicLevel
-@property (nonatomic) int currentLevel;
 
 @end

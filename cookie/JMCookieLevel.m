@@ -8,7 +8,10 @@
 
 #import "JMCookieLevel.h"
 
-@implementation JMCookieLevel
+@implementation JMCookieLevel{
+    
+
+}
 
 
 -(void)didMoveToView:(SKView *)view{
@@ -143,8 +146,12 @@
     NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/3.3];
     
     NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
-    [self addStars:starArray];
+    
 
+    
+
+    [self addStars:starArray];
+    
     
 }
 
@@ -628,6 +635,7 @@
     
 }
 -(void)endGame{
+    [super endGame];
     if ([[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] < self.currentLevel+1) {
         [[NSUserDefaults standardUserDefaults]setInteger:self.currentLevel+1 forKey:@"unlockedLevels"];
         [[NSUserDefaults standardUserDefaults]synchronize];
@@ -645,7 +653,6 @@
     
     JMCookieLevel *scene = [[JMCookieLevel alloc]initWithSize:self.size];
     scene.currentLevel = self.currentLevel + 1;
-    NSLog(@"%d",self.currentLevel+1);
     [self.view presentScene:scene];
     
 }
