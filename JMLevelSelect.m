@@ -38,7 +38,15 @@
     JMScrollableNode *level20;
     UIScrollView *scrollViewMenu;
 }
+- (void)sceneDidLoad{
+    NSLog(@"load");
+    if ([[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] == 0) {
+        [[NSUserDefaults standardUserDefaults]setInteger:1 forKey:@"unlockedLevels"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        
+    }
 
+}
 -(void)didMoveToView:(SKView *)view{
     
     [super didMoveToView:view];
@@ -502,7 +510,7 @@
     SKNode *node = [self nodeAtPoint:location];
     JMCookieLevel *level = [[JMCookieLevel alloc]initWithSize:CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height)];
     
-//    int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
+    int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
 
     
     if([node.name isEqualToString:@"level1"])
@@ -595,7 +603,7 @@
         
     }
 
-    if ( level.currentLevel > 0) {
+    if ( level.currentLevel > 0 && level.currentLevel <= unlockedLevel) {
         [self.view presentScene:level];
 
     }
