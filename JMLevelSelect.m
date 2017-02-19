@@ -38,15 +38,7 @@
     JMScrollableNode *level20;
     UIScrollView *scrollViewMenu;
 }
-- (void)sceneDidLoad{
-    NSLog(@"load");
-    if ([[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] == 0) {
-        [[NSUserDefaults standardUserDefaults]setInteger:1 forKey:@"unlockedLevels"];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        
-    }
 
-}
 -(void)didMoveToView:(SKView *)view{
     
     [super didMoveToView:view];
@@ -445,13 +437,13 @@
    // [scrollViewMenu setContentOffset:CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]) animated:true];
 
 }
-#warning - may want to fix this bullshit where 1 == 19
 -(int)numberOfStarsCollectedFromArray:(NSArray*)array{
-    
+
     int num = 0;
     for (int i = 0; i < array.count; i++) {
 
-        if ((int)array[i] == 19) {
+
+        if ([array[i]integerValue] == 1) {
             num ++;
         }
     }
@@ -521,58 +513,79 @@
 
     }else if ([node.name isEqualToString:@"level2"])
     {
-        level.currentLevel = 2;
 
+        if (unlockedLevel>=2) {
+            level.currentLevel = 2;
+
+        }
+
+    
     }else if ([node.name isEqualToString:@"level3"])
     {
-        level.currentLevel = 3;
-
+        if (unlockedLevel>=3) {
+            level.currentLevel = 3;
+            
+        }
         
         
     }else if ([node.name isEqualToString:@"level4"])
     {
-        level.currentLevel = 4;
-
+        if (unlockedLevel>=4) {
+            level.currentLevel = 4;
+            
+        }
         
         
     }else if ([node.name isEqualToString:@"level5"])
     {
-        level.currentLevel = 5;
-
+        if (unlockedLevel>=5) {
+            level.currentLevel = 5;
+            
+        }
         
         
     }else if ([node.name isEqualToString:@"level6"])
     {
-        level.currentLevel = 6;
-
+        if (unlockedLevel>=6) {
+            level.currentLevel = 6;
+            
+        }
         
         
     }else if ([node.name isEqualToString:@"level7"])
     {
-        level.currentLevel = 7;
-
+        if (unlockedLevel>=7) {
+            level.currentLevel = 7;
+            
+        }
         
         
     }
     else if ([node.name isEqualToString:@"level8"])
     {
-        level.currentLevel = 8;
-
+        if (unlockedLevel>=8) {
+            level.currentLevel = 8;
+            
+        }
         
         
         
     }else if ([node.name isEqualToString:@"level9"])
     {
-        level.currentLevel = 9;
-
+        if (unlockedLevel>=9) {
+            level.currentLevel = 9;
+            
+        }
         
         
         
     }
     else if ([node.name isEqualToString:@"level10"])
     {
-        level.currentLevel = 10;
-
+        if (unlockedLevel>=10) {
+            level.currentLevel = 10;
+            
+        }
         
         
         
@@ -580,30 +593,36 @@
     
     else if ([node.name isEqualToString:@"level11"])
     {
-        level.currentLevel = 11;
-
+        if (unlockedLevel>=11) {
+            level.currentLevel = 11;
+            
+        }
         
         
         
     }
     else if ([node.name isEqualToString:@"level12"])
     {
-        level.currentLevel = 12;
-
+        if (unlockedLevel>=12) {
+            level.currentLevel = 12;
+            
+        }
         
         
         
     }
     else if ([node.name isEqualToString:@"level13"])
     {
-        level.currentLevel = 13;
-
+        if (unlockedLevel>=13) {
+            level.currentLevel = 13;
+            
+        }
         
         
         
     }
 
-    if ( level.currentLevel > 0 && level.currentLevel <= unlockedLevel) {
+    if ( level.currentLevel > 0) {
         [self.view presentScene:level];
 
     }
