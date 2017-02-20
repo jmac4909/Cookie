@@ -318,7 +318,7 @@
     level14.anchorPoint = CGPointZero;
     level14.position = CGPointMake(level14.size.width*3.5, level14.size.height * 19.5 );
     level14.userInteractionEnabled = NO;
-    level14.name = @"level4";
+    level14.name = @"level14";
     level14.zPosition = 1;
     if (unlockedLevel < 14) {
         [level14 setLocked:true];
@@ -621,8 +621,42 @@
         
         
     }
-
+    else if ([node.name isEqualToString:@"level14"])
+    {
+        if (unlockedLevel>=14) {
+            level.currentLevel = 14;
+            
+        }
+        
+        
+        
+    }
+    else if ([node.name isEqualToString:@"level15"])
+    {
+        if (unlockedLevel>=15) {
+            level.currentLevel = 15;
+            
+        }
+    
+        
+    }
+    else if ([node.name isEqualToString:@"level16"])
+    {
+        if (unlockedLevel>=16) {
+            level.currentLevel = 16;
+            
+        }
+    }
+    else if ([node.name isEqualToString:@"level17"])
+    {
+        if (unlockedLevel>=17) {
+            level.currentLevel = 17;
+            
+        }
+    }
+    
     if ( level.currentLevel > 0) {
+        NSLog(@"Currentlt level you tapped on %d",level.currentLevel);
         [self.view presentScene:level];
 
     }
