@@ -707,13 +707,17 @@
     NSNumber *wy3Value = [NSNumber numberWithFloat:self.frame.size.height/1.3];
     NSNumber *w3Rotation = [NSNumber numberWithFloat:0];
     
-    
+    NSNumber *wx4Value = [NSNumber numberWithFloat:self.frame.size.width/4.8];
+    NSNumber *wy4Value = [NSNumber numberWithFloat:self.frame.size.height/4];
+    NSNumber *w4Rotation = [NSNumber numberWithFloat:-0.785398];
     
     
     
     NSArray *wallArray = [NSArray arrayWithObjects:wx3Value,wy3Value,w3Rotation,wx2Value,wy2Value,w2Rotation,wx1Value,wy1Value,w1Rotation, nil];
     [self addWalls:wallArray];
     
+    NSArray *bounceWallArray = [NSArray arrayWithObjects:wx4Value,wy4Value,w4Rotation, nil];
+    [self addBounceWalls:bounceWallArray];
     //Adds floor
     [self addExtras];
     

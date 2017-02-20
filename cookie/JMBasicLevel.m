@@ -60,7 +60,7 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     if (isTouching) {
-        CGFloat dt = 3.0/60.0;
+        CGFloat dt = 5.0/60.0;
         CGVector distance = CGVectorMake(touchPoint.x - cookieSprite.position.x, touchPoint.y-cookieSprite.position.y);
         CGVector velocity = CGVectorMake(distance.dx/dt, distance.dy/dt);
         [cookieSprite.physicsBody setVelocity:velocity];
