@@ -14,6 +14,7 @@
 #import "JMWall.h"
 #import "JMStar.h"
 #import "JMBounceWall.h"
+#import "JMBreakWall.h"
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 
@@ -25,6 +26,8 @@ static const uint32_t  starCategory3 = 0x1 <<7;  //Star collision category
 static const uint32_t  wallCategory = 0x1 <<3;  //Wall collision category
 static const uint32_t  floorCategory = 0x1 <<4;  //Floor collision category
 static const uint32_t  bounceWallCategory = 0x1 <<5;  //Bounce Wall collision category
+static const uint32_t  breakWallCategory = 0x1 <<8;  //Bounce Wall collision category
+
 
 
 
@@ -57,8 +60,11 @@ static const uint32_t  bounceWallCategory = 0x1 <<5;  //Bounce Wall collision ca
 -(void)menuButtonPress;
 -(void)endGame;
 -(void)addStars;
+
 -(void)addWalls:(NSArray*)positionArray;
 -(void)addBounceWalls:(NSArray*)positionArray;
+-(void)addBreakWalls:(NSArray*)positionArray;
+
 -(void)setUpLevel;
 -(void)restart;
 -(void)createCookie:(CGPoint)cookieLocation;

@@ -217,6 +217,25 @@
         }
     }
     
+    //Cookie hits break wall
+    if ((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == breakWallCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == breakWallCategory)){
+        
+        
+        
+        SKNode *wallBody;
+        if (contact.bodyA.categoryBitMask == breakWallCategory) {
+           wallBody = contact.bodyA.node;
+            
+        }else{
+            wallBody = contact.bodyB.node;
+        }
+        
+        [(JMBreakWall*)wallBody breakSelf];
+        
+        
+        
+    }
+    
     //Cookie Hits Floor
     
     if ((contact.bodyA.categoryBitMask == cookieCategory && contact.bodyB.categoryBitMask == floorCategory) || (contact.bodyB.categoryBitMask == cookieCategory && contact.bodyA.categoryBitMask == floorCategory)){
@@ -242,7 +261,7 @@
     cookieSprite.yScale = 0.17;
     cookieSprite.physicsBody.categoryBitMask = cookieCategory;
     cookieSprite.physicsBody.contactTestBitMask = milkCategory | wallCategory | bounceWallCategory;
-    cookieSprite.physicsBody.collisionBitMask = milkCategory | wallCategory | bounceWallCategory;
+    cookieSprite.physicsBody.collisionBitMask = milkCategory | wallCategory | bounceWallCategory | breakWallCategory;
     cookieSprite.zPosition = 0;
     cookieSprite.physicsBody.dynamic = YES;
     
@@ -253,6 +272,8 @@
     //***** End cookie sprite *****
     
 }
+
+#pragma mark - Walls
 
 -(void)addWalls:(NSArray*)positionArray{
     
@@ -288,6 +309,27 @@
     }
     
 }
+
+-(void)addBreakWalls:(NSArray*)positionArray{
+    
+    // positionArray[0] = X : positionArray[1] = Y
+    for (int x = 0; x<(int)positionArray.count; x+=3) {
+        
+        JMBreakWall *wall = [[JMBreakWall alloc]initWithSize:CGSizeMake(80, 20) withStringNamed:@"BounceLog"];
+        float rotation = [positionArray[x+2] floatValue];
+        wall.zRotation = rotation;
+        wall.position = CGPointMake([positionArray[x] floatValue], [positionArray[x+1] floatValue]);
+        [self addChild:wall];
+        
+        
+        
+        
+    }
+    
+}
+
+#pragma mark - Extra items to be done
+
 
 -(void)addStars:(NSArray*)positionArray{
     
@@ -364,12 +406,12 @@
     
 }
 
--(void)addStars{
-    
-}
--(void)addWalls{
-    
-}
+//-(void)addStars{
+//    
+//}
+//-(void)addWalls{
+//    
+//}
 
 -(void)setUpLevel{
     
@@ -380,6 +422,8 @@
 
        
 }
+#pragma mark - Game methods
+
 -(void)endGame{
 
     //Sync up saved stars

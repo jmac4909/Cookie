@@ -654,6 +654,27 @@
             
         }
     }
+    else if ([node.name isEqualToString:@"level18"])
+    {
+        if (unlockedLevel>=18) {
+            level.currentLevel = 18;
+            
+        }
+    }
+    else if ([node.name isEqualToString:@"level19"])
+    {
+        if (unlockedLevel>=19) {
+            level.currentLevel = 19;
+            
+        }
+    }
+    else if ([node.name isEqualToString:@"level20"])
+    {
+        if (unlockedLevel>=20) {
+            level.currentLevel = 20;
+            
+        }
+    }
     
     if ( level.currentLevel > 0) {
         NSLog(@"Currentlt level you tapped on %d",level.currentLevel);
