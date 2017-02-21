@@ -132,6 +132,31 @@
             [self setLevel20];
             
             break;
+        case 21:
+            
+            [self setLevel21];
+            
+            break;
+        case 22:
+            
+            [self setLevel22];
+            
+            break;
+        case 23:
+            
+            [self setLevel23];
+            
+            break;
+        case 24:
+            
+            [self setLevel24];
+            
+            break;
+        case 25:
+            
+            [self setLevel25];
+            
+            break;
             
         default:
             break;
@@ -1002,6 +1027,258 @@
     
     NSNumber *sx3Value = [NSNumber numberWithFloat:self.frame.size.width/2];
     NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/1.6];
+    
+    NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
+    [self addStars:starArray];
+    
+    
+}
+
+-(void)setLevel21{
+    //Adds Cookie
+    [self createCookie:CGPointMake(self.frame.size.width/5, self.frame.size.height/1.7)];
+    
+    //Adds Milk
+    [self createMilkAt:CGPointMake(self.frame.size.width/1.2, self.frame.size.height/1.6) withScale:.6 and:.5];
+    
+    //Adds Walls
+    //X and Y of walls
+    
+    NSNumber *wx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.45];
+    NSNumber *wy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.5];
+    NSNumber *w1Rotation = [NSNumber numberWithFloat:1.5708];
+    
+    NSNumber *wx2Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *wy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    NSNumber *w2Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx3Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *wy3Value = [NSNumber numberWithFloat:self.frame.size.height/4];
+    NSNumber *w3Rotation = [NSNumber numberWithFloat:0];
+    
+    
+    NSArray *wallArray = [NSArray arrayWithObjects:wx2Value,wy2Value,w2Rotation,wx3Value,wy3Value,w3Rotation, nil];
+    [self addWalls:wallArray];
+    
+    NSArray *breakWallArray = [NSArray arrayWithObjects:wx1Value,wy1Value,w1Rotation, nil];
+    [self addBreakWalls:breakWallArray];
+    
+    
+    //Adds floor
+    [self addExtras];
+    
+    //Add Stars
+    //X and Y of stars
+    NSNumber *sx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.2];
+    NSNumber *sy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    
+    NSNumber *sx2Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *sy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.2];
+    
+    NSNumber *sx3Value = [NSNumber numberWithFloat:self.frame.size.width/1.2];
+    NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/1.9];
+    
+    NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
+    [self addStars:starArray];
+    
+    
+}
+
+-(void)setLevel22{
+    //Adds Cookie
+    [self createCookie:CGPointMake(self.frame.size.width/5, self.frame.size.height/1.5)];
+    
+    //Adds Milk
+    [self createMilkAt:CGPointMake(self.frame.size.width/1.4, self.frame.size.height/4) withScale:.6 and:.5];
+    
+    //Adds Walls
+    //X and Y of walls
+    
+    NSNumber *wx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.4];
+    NSNumber *wy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    NSNumber *w1Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx2Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *wy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.7];
+    NSNumber *w2Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx3Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *wy3Value = [NSNumber numberWithFloat:self.frame.size.height/4];
+    NSNumber *w3Rotation = [NSNumber numberWithFloat:-0.645772];
+    
+    
+    NSArray *wallArray = [NSArray arrayWithObjects:wx2Value,wy2Value,w2Rotation,wx3Value,wy3Value,w3Rotation,wx1Value,wy1Value,w1Rotation, nil];
+    [self addWalls:wallArray];
+    
+    NSArray *bounceWallArray = [NSArray arrayWithObjects:wx3Value,wy3Value,w3Rotation, nil];
+    [self addBounceWalls:bounceWallArray];
+    
+    
+    //Adds floor
+    [self addExtras];
+    
+    //Add Stars
+    //X and Y of stars
+    NSNumber *sx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.4];
+    NSNumber *sy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.25];
+    
+    NSNumber *sx2Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *sy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.2];
+    
+    NSNumber *sx3Value = [NSNumber numberWithFloat:self.frame.size.width/1.2];
+    NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/1.9];
+    
+    NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
+    [self addStars:starArray];
+    
+    
+}
+
+-(void)setLevel23{
+    //Adds Cookie
+    [self createCookie:CGPointMake(self.frame.size.width/1.3, self.frame.size.height/1.5)];
+    
+    //Adds Milk
+    [self createMilkAt:CGPointMake(self.frame.size.width/4.8, self.frame.size.height/4.5) withScale:.6 and:.5];
+    
+    //Adds Walls
+    //X and Y of walls
+    
+    NSNumber *wx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.3];
+    NSNumber *wy1Value = [NSNumber numberWithFloat:self.frame.size.height/2];
+    NSNumber *w1Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx2Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *wy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.3];
+    NSNumber *w2Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx3Value = [NSNumber numberWithFloat:self.frame.size.width/3.5];
+    NSNumber *wy3Value = [NSNumber numberWithFloat:self.frame.size.height/2.5];
+    NSNumber *w3Rotation = [NSNumber numberWithFloat:1.39626];
+    
+    NSNumber *wx4Value = [NSNumber numberWithFloat:self.frame.size.width/6];
+    NSNumber *wy4Value = [NSNumber numberWithFloat:self.frame.size.height/2.5];
+    NSNumber *w4Rotation = [NSNumber numberWithFloat:-1.39626];
+    
+    
+    NSArray *wallArray = [NSArray arrayWithObjects:wx2Value,wy2Value,w2Rotation,wx1Value,wy1Value,w1Rotation, nil];
+    [self addWalls:wallArray];
+    
+    NSArray *breakWallArray = [NSArray arrayWithObjects:wx3Value,wy3Value,w3Rotation,wx4Value,wy4Value,w4Rotation, nil];
+    [self addBreakWalls:breakWallArray];
+    
+    
+    //Adds floor
+    [self addExtras];
+    
+    //Add Stars
+    //X and Y of stars
+    NSNumber *sx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.3];
+    NSNumber *sy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    
+    NSNumber *sx2Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *sy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.2];
+    
+    NSNumber *sx3Value = [NSNumber numberWithFloat:self.frame.size.width/4.8];
+    NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/3.3];
+    
+    NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
+    [self addStars:starArray];
+    
+    
+}
+
+-(void)setLevel24{
+    //Adds Cookie
+    [self createCookie:CGPointMake(self.frame.size.width/1.4, self.frame.size.height/1.2)];
+    
+    //Adds Milk
+    [self createMilkAt:CGPointMake(self.frame.size.width/1.4, self.frame.size.height/5) withScale:.6 and:.5];
+    
+    //Adds Walls
+    //X and Y of walls
+    
+    NSNumber *wx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.4];
+    NSNumber *wy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    NSNumber *w1Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx2Value = [NSNumber numberWithFloat:self.frame.size.width/4.5];
+    NSNumber *wy2Value = [NSNumber numberWithFloat:self.frame.size.height/2.4];
+    NSNumber *w2Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx3Value = [NSNumber numberWithFloat:self.frame.size.width/5];
+    NSNumber *wy3Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    NSNumber *w3Rotation = [NSNumber numberWithFloat:0.645772];
+    
+    
+    NSArray *wallArray = [NSArray arrayWithObjects:wx1Value,wy1Value,w1Rotation, nil];
+    [self addWalls:wallArray];
+    
+    NSArray *bounceWallArray = [NSArray arrayWithObjects:wx3Value,wy3Value,w3Rotation,wx2Value,wy2Value,w2Rotation, nil];
+    [self addBounceWalls:bounceWallArray];
+    
+    
+    //Adds floor
+    [self addExtras];
+    
+    //Add Stars
+    //X and Y of stars
+    NSNumber *sx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.4];
+    NSNumber *sy1Value = [NSNumber numberWithFloat:self.frame.size.height/3.5];
+    
+    NSNumber *sx2Value = [NSNumber numberWithFloat:self.frame.size.width/4.4];
+    NSNumber *sy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.5];
+    
+    NSNumber *sx3Value = [NSNumber numberWithFloat:self.frame.size.width/4.4];
+    NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/2.2];
+    
+    NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
+    [self addStars:starArray];
+
+    
+}
+
+
+-(void)setLevel25{
+    //Adds Cookie
+    [self createCookie:CGPointMake(self.frame.size.width/1.4, self.frame.size.height/1.2)];
+    
+    //Adds Milk
+    [self createMilkAt:CGPointMake(self.frame.size.width/1.4, self.frame.size.height/5) withScale:.6 and:.5];
+    
+    //Adds Walls
+    //X and Y of walls
+    
+    NSNumber *wx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.4];
+    NSNumber *wy1Value = [NSNumber numberWithFloat:self.frame.size.height/1.4];
+    NSNumber *w1Rotation = [NSNumber numberWithFloat:0];
+    
+    NSNumber *wx2Value = [NSNumber numberWithFloat:self.frame.size.width/4.5];
+    NSNumber *wy2Value = [NSNumber numberWithFloat:self.frame.size.height/2.4];
+    NSNumber *w2Rotation = [NSNumber numberWithFloat:0];
+    
+
+    
+    
+    NSArray *wallArray = [NSArray arrayWithObjects:wx1Value,wy1Value,w1Rotation,wx2Value,wy2Value,w2Rotation, nil];
+    [self addWalls:wallArray];
+    
+ 
+    
+    
+    //Adds floor
+    [self addExtras];
+    
+    //Add Stars
+    //X and Y of stars
+    NSNumber *sx1Value = [NSNumber numberWithFloat:self.frame.size.width/1.4];
+    NSNumber *sy1Value = [NSNumber numberWithFloat:self.frame.size.height/3.5];
+    
+    NSNumber *sx2Value = [NSNumber numberWithFloat:self.frame.size.width/4.4];
+    NSNumber *sy2Value = [NSNumber numberWithFloat:self.frame.size.height/1.2];
+    
+    NSNumber *sx3Value = [NSNumber numberWithFloat:self.frame.size.width/4.4];
+    NSNumber *sy3Value = [NSNumber numberWithFloat:self.frame.size.height/2];
     
     NSArray *starArray = [NSArray arrayWithObjects:sx1Value,sy1Value,sx2Value,sy2Value,sx3Value,sy3Value, nil];
     [self addStars:starArray];

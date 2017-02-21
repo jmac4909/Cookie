@@ -36,6 +36,12 @@
     JMScrollableNode *level18;
     JMScrollableNode *level19;
     JMScrollableNode *level20;
+    JMScrollableNode *level21;
+    JMScrollableNode *level22;
+    JMScrollableNode *level23;
+    JMScrollableNode *level24;
+    JMScrollableNode *level25;
+
     UIScrollView *scrollViewMenu;
 }
 
@@ -415,6 +421,8 @@
     [self addChild:level19];
     [self addLabelToButton:level19 withText:@"19"];
     
+    
+    
     level20 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
     [level20 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
     level20.anchorPoint = CGPointZero;
@@ -431,6 +439,129 @@
     }
     [self addChild:level20];
     [self addLabelToButton:level20 withText:@"20"];
+    
+    
+    
+    level21 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level21 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level21.anchorPoint = CGPointZero;
+    level21.position = CGPointMake(level21.size.width*2.82, level21.size.height * 30 );
+    level21.userInteractionEnabled = NO;
+    level21.name = @"level21";
+    level21.zPosition = 1;
+    if (unlockedLevel < 21) {
+        [level21 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level21"] ];
+        [level21 setNumberOfStars:num forLevel:@"level21"];
+    }
+    [self addChild:level21];
+    [self addLabelToButton:level21 withText:@"21"];
+    
+    
+    
+    
+    level22 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level22 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level22.anchorPoint = CGPointZero;
+    level22.position = CGPointMake(level22.size.width*2.6, level22.size.height * 31.5 );
+    level22.userInteractionEnabled = NO;
+    level22.name = @"level22";
+    level22.zPosition = 1;
+    if (unlockedLevel < 22) {
+        [level22 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level22"] ];
+        [level22 setNumberOfStars:num forLevel:@"level22"];
+    }
+    [self addChild:level22];
+    [self addLabelToButton:level22 withText:@"22"];
+    
+    
+    
+    level23 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level23 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level23.anchorPoint = CGPointZero;
+    level23.position = CGPointMake(level23.size.width*2.33, level23.size.height * 33 );
+    level23.userInteractionEnabled = NO;
+    level23.name = @"level23";
+    level23.zPosition = 1;
+    if (unlockedLevel < 23) {
+        [level23 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level23"] ];
+        [level23 setNumberOfStars:num forLevel:@"level23"];
+    }
+    [self addChild:level23];
+    [self addLabelToButton:level23 withText:@"23"];
+    
+    
+    
+    level24 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level24 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level24.anchorPoint = CGPointZero;
+    level24.position = CGPointMake(level24.size.width*2.1, level24.size.height * 34.5 );
+    level24.userInteractionEnabled = NO;
+    level24.name = @"level24";
+    level24.zPosition = 1;
+    if (unlockedLevel < 24) {
+        [level24 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level24"] ];
+        [level24 setNumberOfStars:num forLevel:@"level24"];
+    }
+    [self addChild:level24];
+    [self addLabelToButton:level24 withText:@"24"];
+    
+    
+    
+    level25 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
+    [level25 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
+    level25.anchorPoint = CGPointZero;
+    level25.position = CGPointMake(level25.size.width*2, level25.size.height * 36 );
+    level25.userInteractionEnabled = NO;
+    level25.name = @"level25";
+    level25.zPosition = 1;
+    if (unlockedLevel < 25) {
+        [level25 setLocked:true];
+    }else{
+        int num = 0;
+        num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level25"] ];
+        [level25 setNumberOfStars:num forLevel:@"level25"];
+    }
+    [self addChild:level25];
+    [self addLabelToButton:level25 withText:@"25"];
+
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     scrollViewMenu.contentOffset = CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]);
@@ -492,6 +623,12 @@
     level18.contentOffset = scrollView.contentOffset;
     level19.contentOffset = scrollView.contentOffset;
     level20.contentOffset = scrollView.contentOffset;
+    level21.contentOffset = scrollView.contentOffset;
+    level22.contentOffset = scrollView.contentOffset;
+    level23.contentOffset = scrollView.contentOffset;
+    level24.contentOffset = scrollView.contentOffset;
+    level25.contentOffset = scrollView.contentOffset;
+
 
     [[NSUserDefaults standardUserDefaults]setValue:NSStringFromCGPoint(scrollViewMenu.contentOffset) forKey:@"scrollViewOffset"];
 }
@@ -675,6 +812,42 @@
             
         }
     }
+    else if ([node.name isEqualToString:@"level21"])
+    {
+        if (unlockedLevel>=21) {
+            level.currentLevel = 21;
+            
+        }
+    }
+    else if ([node.name isEqualToString:@"level22"])
+    {
+        if (unlockedLevel>=22) {
+            level.currentLevel = 22;
+            
+        }
+    }
+    else if ([node.name isEqualToString:@"level23"])
+    {
+        if (unlockedLevel>=23) {
+            level.currentLevel = 23;
+            
+        }
+    }
+    else if ([node.name isEqualToString:@"level24"])
+    {
+        if (unlockedLevel>=24) {
+            level.currentLevel = 24;
+            
+        }
+    }
+    else if ([node.name isEqualToString:@"level25"])
+    {
+        if (unlockedLevel>=25) {
+            level.currentLevel = 25;
+            
+        }
+    }
+    
     
     if ( level.currentLevel > 0) {
         NSLog(@"Currentlt level you tapped on %d",level.currentLevel);
