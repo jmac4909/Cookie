@@ -60,7 +60,7 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     if (isTouching) {
-        CGFloat dt = 5.0/60.0;
+        CGFloat dt = 4.5/60.0;
         CGVector distance = CGVectorMake(touchPoint.x - cookieSprite.position.x, touchPoint.y-cookieSprite.position.y);
         CGVector velocity = CGVectorMake(distance.dx/dt, distance.dy/dt);
         [cookieSprite.physicsBody setVelocity:velocity];
@@ -78,11 +78,13 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
 
+    CGRect cookieTouchRect = CGRectMake(cookieSprite.frame.origin.x, cookieSprite.frame.origin.y, cookieSprite.frame.size.width * 2.0 , cookieSprite.frame.size.height * 2.0);
+    
     if ([node.name isEqualToString:@"retryButton"]) {
         [self restart];
     }
     
-    if ([cookieSprite containsPoint:location] && [self cookieOnGround]) {
+    if ( CGRectContainsPoint(cookieTouchRect, location) && [self cookieOnGround]) {
         touchPoint = location;
         isTouching = true;
     }else if ([node.name isEqualToString:@"nextLevelButton"]){
@@ -560,17 +562,19 @@
     {
         
         
-        if (cookieSprite.physicsBody.velocity.dy == 0.000000 || cookieSprite.physicsBody.velocity.dy == -0.000000)
+    {
+
+        if (fabs(cookieSprite.physicsBody.velocity.dy)<= .0001)
         {
-            
             return true;
             
             
         }else{
-            
+
             return false;
             
         }
+    }
     }
     
     return false;
