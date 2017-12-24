@@ -17,6 +17,7 @@
 - (void)setUp {
     [super setUp];
     
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
     // In UI tests it is usually best to stop immediately when a failure occurs.
@@ -32,9 +33,22 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+//- (void)testExample {
+//    // Use recording to get started writing UI tests.
+//    // Use XCTAssert and related functions to verify your tests produce the correct results.
+//
+//
+//
+//}
+- (void)testMenuScrolling {
+    
+    XCUIElement *element = [[[[[XCUIApplication alloc] init] childrenMatchingType:XCUIElementTypeWindow] elementBoundByIndex:0] childrenMatchingType:XCUIElementTypeOther].element;
+    [element swipeDown];
+    [element swipeDown];
+    [element swipeUp];
+    [element swipeUp];
 }
+
+
 
 @end

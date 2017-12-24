@@ -42,12 +42,17 @@
     JMScrollableNode *level24;
     JMScrollableNode *level25;
 
+    NSArray* levelArray;
+    
+    SKShapeNode *levelPath;
+    CGPoint origPath;
     UIScrollView *scrollViewMenu;
 }
 
 -(void)didMoveToView:(SKView *)view{
     
     [super didMoveToView:view];
+
 
     
     int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
@@ -57,14 +62,14 @@
     [scrollBackGround1 setSize:CGSizeMake(self.scene.size.width*1, self.scene.size.height*2.568216)];
     scrollBackGround1.position = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height);
     scrollBackGround1.userInteractionEnabled = NO;
-    scrollBackGround1.zPosition = 0;
+    scrollBackGround1.zPosition = -2;
     [self addChild:scrollBackGround1];
     
-    scrollBackGround2 = [[JMScrollableNode alloc]initWithImageNamed:@"levelSelectBackground2"];
+    scrollBackGround2 = [[JMScrollableNode alloc]initWithImageNamed:@"levelSelectBackground1"];
     [scrollBackGround2 setSize:CGSizeMake(self.scene.size.width*1, self.scene.size.height*2.568216)];
     scrollBackGround2.position = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height+scrollBackGround1.frame.size.height-2);
     scrollBackGround2.userInteractionEnabled = NO;
-    scrollBackGround2.zPosition = 0;
+    scrollBackGround2.zPosition = -2;
     [self addChild:scrollBackGround2];
     
     CGAffineTransform verticalFlip = CGAffineTransformMakeScale(1,-1);
@@ -78,6 +83,8 @@
     scrollViewMenu.delegate = self;
     [self.view sendSubviewToBack:scrollViewMenu];
 
+
+    
 
     
     level1 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
@@ -536,28 +543,37 @@
     [self addChild:level25];
     [self addLabelToButton:level25 withText:@"25"];
 
+    
+    
+    
+        levelArray = [[NSArray alloc]initWithObjects:level1,level2,level3,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15,level16,level17,level18,level19,level20,level21,level22,level23,level24,level25, nil];
+    
+    
+    
+    //Creates path in scene
+    double extraWidth = level1.frame.size.width/8;
+    levelPath = [SKShapeNode node];
+    CGMutablePathRef pathToDraw = CGPathCreateMutable();
+    CGPathMoveToPoint(pathToDraw, NULL, level1.position.x - extraWidth, level1.position.y+level1.frame.size.height/2);
 
+    for (JMScrollableNode *curLevel in levelArray) {
 
+         CGPathAddLineToPoint(pathToDraw, NULL, curLevel.position.x - extraWidth, curLevel.position.y+curLevel.frame.size.height/2);
+    }
     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    for (JMScrollableNode *curLevel in [levelArray reverseObjectEnumerator]) {
+        
+        CGPathAddLineToPoint(pathToDraw, NULL, curLevel.position.x+curLevel.frame.size.width + extraWidth, curLevel.position.y+curLevel.frame.size.height/2);
+    }
+    CGPathCloseSubpath(pathToDraw);
+    levelPath.path = pathToDraw;
+    [levelPath setStrokeColor:[SKColor whiteColor]];
+    [levelPath setLineWidth:level1.frame.size.width/8];
+    [levelPath setLineJoin:(kCGLineJoinRound)];
+    [levelPath setLineCap:kCGLineCapRound];
+    [levelPath setFillColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.00 alpha:0.50]];
+    origPath = levelPath.position;
+    [self addChild:levelPath];
     
     
     
@@ -629,7 +645,12 @@
     level24.contentOffset = scrollView.contentOffset;
     level25.contentOffset = scrollView.contentOffset;
 
+    CGPoint x = CGPointMake(origPath.x - scrollView.contentOffset.x,
+                            origPath.y - scrollView.contentOffset.y);
+    [levelPath setPosition:x];
 
+
+    
     [[NSUserDefaults standardUserDefaults]setValue:NSStringFromCGPoint(scrollViewMenu.contentOffset) forKey:@"scrollViewOffset"];
 }
 

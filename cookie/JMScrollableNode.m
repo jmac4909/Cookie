@@ -29,10 +29,8 @@
 {
     self->_locked = locked;
     if (locked) {
-        self.alpha = 0.5;
-
-    }else{
-        self.alpha = 1;
+        [self setColorBlendFactor:1.0];
+        [self setColor:[UIColor grayColor]];
 
     }
 }

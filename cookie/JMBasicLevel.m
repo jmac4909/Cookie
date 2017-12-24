@@ -78,7 +78,8 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
 
-    CGRect cookieTouchRect = CGRectMake(cookieSprite.frame.origin.x, cookieSprite.frame.origin.y, cookieSprite.frame.size.width * 2.0 , cookieSprite.frame.size.height * 2.0);
+    CGRect cookieTouchRect = CGRectMake(cookieSprite.frame.origin.x - cookieSprite.frame.size.width/2, cookieSprite.frame.origin.y - cookieSprite.frame.size.height/2, cookieSprite.frame.size.width * 2.0 , cookieSprite.frame.size.height * 2.0);
+   
     
     if ([node.name isEqualToString:@"retryButton"]) {
         [self restart];

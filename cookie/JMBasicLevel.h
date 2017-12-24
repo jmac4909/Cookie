@@ -59,7 +59,6 @@ static const uint32_t  breakWallCategory = 0x1 <<8;  //Bounce Wall collision cat
 -(void)nextLevelButtonPress;
 -(void)menuButtonPress;
 -(void)endGame;
--(void)addStars;
 
 -(void)addWalls:(NSArray*)positionArray;
 -(void)addBounceWalls:(NSArray*)positionArray;
