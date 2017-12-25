@@ -42,7 +42,8 @@
     JMScrollableNode *level24;
     JMScrollableNode *level25;
 
-    NSArray* levelArray;
+    NSMutableArray* levelArray;
+
     
     SKShapeNode *levelPath;
     CGPoint origPath;
@@ -56,6 +57,7 @@
 
     
     int unlockedLevel = (int)[[NSUserDefaults standardUserDefaults]integerForKey:@"unlockedLevels"] ;
+    levelArray = [[NSMutableArray alloc]init];
 
     
     scrollBackGround1 = [[JMScrollableNode alloc]initWithImageNamed:@"levelSelectBackground1"];
@@ -84,7 +86,6 @@
     [self.view sendSubviewToBack:scrollViewMenu];
 
 
-    
 
     
     level1 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
@@ -97,6 +98,7 @@
     int num = 0;
     num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level1"] ];
     [level1 setNumberOfStars:num forLevel:@"level1"];
+    [levelArray addObject:level1];
     [self addChild:level1];
     [self addLabelToButton:level1 withText:@"1"];
 
@@ -118,6 +120,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level2"] ];
         [level2 setNumberOfStars:num forLevel:@"level2"];
     }
+    [levelArray addObject:level2];
     [self addChild:level2];
     [self addLabelToButton:level2 withText:@"2"];
     
@@ -138,6 +141,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level3"] ];
         [level3 setNumberOfStars:num forLevel:@"level3"];
     }
+    [levelArray addObject:level3];
     [self addChild:level3];
     [self addLabelToButton:level3 withText:@"3"];
 
@@ -157,7 +161,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level4"] ];
         [level4 setNumberOfStars:num forLevel:@"level4"];
     }
-    
+    [levelArray addObject:level4];
     [self addChild:level4];
     [self addLabelToButton:level4 withText:@"4"];
 
@@ -177,6 +181,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level5"] ];
         [level5 setNumberOfStars:num forLevel:@"level5"];
     }
+    [levelArray addObject:level5];
     [self addChild:level5];
     [self addLabelToButton:level5 withText:@"5"];
 
@@ -196,6 +201,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level6"] ];
         [level6 setNumberOfStars:num forLevel:@"level6"];
     }
+    [levelArray addObject:level6];
     [self addChild:level6];
     [self addLabelToButton:level6 withText:@"6"];
 
@@ -214,6 +220,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level7"] ];
         [level7 setNumberOfStars:num forLevel:@"level7"];
     }
+    [levelArray addObject:level7];
     [self addChild:level7];
     [self addLabelToButton:level7 withText:@"7"];
 
@@ -232,6 +239,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level8"] ];
         [level8 setNumberOfStars:num forLevel:@"level8"];
     }
+    [levelArray addObject:level8];
     [self addChild:level8];
     [self addLabelToButton:level8 withText:@"8"];
 
@@ -250,6 +258,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level9"] ];
         [level9 setNumberOfStars:num forLevel:@"level9"];
     }
+    [levelArray addObject:level9];
     [self addChild:level9];
     [self addLabelToButton:level9 withText:@"9"];
     
@@ -269,8 +278,10 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level10"] ];
         [level10 setNumberOfStars:num forLevel:@"level10"];
     }
+    [levelArray addObject:level10];
     [self addChild:level10];
     [self addLabelToButton:level10 withText:@"10"];
+    
     
     level11 = [[JMScrollableNode alloc]initWithImageNamed:@"Oval"];
     [level11 setSize:CGSizeMake(self.scene.size.width*0.138667 , self.scene.size.width*0.138667 )];
@@ -288,6 +299,7 @@
 
         [level11 setNumberOfStars:num forLevel:@"level11"];
     }
+    [levelArray addObject:level11];
     [self addChild:level11];
     [self addLabelToButton:level11 withText:@"11"];
     
@@ -306,6 +318,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level12"] ];
         [level12 setNumberOfStars:num forLevel:@"level12"];
     }
+    [levelArray addObject:level12];
     [self addChild:level12];
     [self addLabelToButton:level12 withText:@"12"];
     
@@ -323,6 +336,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level13"] ];
         [level13 setNumberOfStars:num forLevel:@"level13"];
     }
+    [levelArray addObject:level13];
     [self addChild:level13];
     [self addLabelToButton:level13 withText:@"13"];
     
@@ -340,6 +354,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level14"] ];
         [level14 setNumberOfStars:num forLevel:@"level14"];
     }
+    [levelArray addObject:level14];
     [self addChild:level14];
     [self addLabelToButton:level14 withText:@"14"];
 
@@ -357,6 +372,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level15"] ];
         [level15 setNumberOfStars:num forLevel:@"level15"];
     }
+    [levelArray addObject:level15];
     [self addChild:level15];
     [self addLabelToButton:level15 withText:@"15"];
     
@@ -374,6 +390,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level16"] ];
         [level16 setNumberOfStars:num forLevel:@"level16"];
     }
+    [levelArray addObject:level16];
     [self addChild:level16];
     [self addLabelToButton:level16 withText:@"16"];
     
@@ -391,6 +408,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level17"] ];
         [level17 setNumberOfStars:num forLevel:@"level17"];
     }
+    [levelArray addObject:level17];
     [self addChild:level17];
     [self addLabelToButton:level17 withText:@"17"];
     
@@ -408,6 +426,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level18"] ];
         [level18 setNumberOfStars:num forLevel:@"level18"];
     }
+    [levelArray addObject:level18];
     [self addChild:level18];
     [self addLabelToButton:level18 withText:@"18"];
     
@@ -425,6 +444,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level19"] ];
         [level19 setNumberOfStars:num forLevel:@"level19"];
     }
+    [levelArray addObject:level19];
     [self addChild:level19];
     [self addLabelToButton:level19 withText:@"19"];
     
@@ -444,6 +464,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level20"] ];
         [level20 setNumberOfStars:num forLevel:@"level20"];
     }
+    [levelArray addObject:level20];
     [self addChild:level20];
     [self addLabelToButton:level20 withText:@"20"];
     
@@ -463,6 +484,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level21"] ];
         [level21 setNumberOfStars:num forLevel:@"level21"];
     }
+    [levelArray addObject:level21];
     [self addChild:level21];
     [self addLabelToButton:level21 withText:@"21"];
     
@@ -483,6 +505,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level22"] ];
         [level22 setNumberOfStars:num forLevel:@"level22"];
     }
+    [levelArray addObject:level22];
     [self addChild:level22];
     [self addLabelToButton:level22 withText:@"22"];
     
@@ -502,6 +525,7 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level23"] ];
         [level23 setNumberOfStars:num forLevel:@"level23"];
     }
+    [levelArray addObject:level23];
     [self addChild:level23];
     [self addLabelToButton:level23 withText:@"23"];
     
@@ -521,6 +545,8 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level24"] ];
         [level24 setNumberOfStars:num forLevel:@"level24"];
     }
+    [levelArray addObject:level24];
+
     [self addChild:level24];
     [self addLabelToButton:level24 withText:@"24"];
     
@@ -540,15 +566,10 @@
         num = [self numberOfStarsCollectedFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"level25"] ];
         [level25 setNumberOfStars:num forLevel:@"level25"];
     }
+    [levelArray addObject:level25];
+
     [self addChild:level25];
     [self addLabelToButton:level25 withText:@"25"];
-
-    
-    
-    
-        levelArray = [[NSArray alloc]initWithObjects:level1,level2,level3,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15,level16,level17,level18,level19,level20,level21,level22,level23,level24,level25, nil];
-    
-    
     
     //Creates path in scene
     double extraWidth = level1.frame.size.width/8;
@@ -575,13 +596,7 @@
     origPath = levelPath.position;
     [self addChild:levelPath];
     
-    
-    
-    
-
-
     scrollViewMenu.contentOffset = CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]);
-   // [scrollViewMenu setContentOffset:CGPointFromString([[NSUserDefaults standardUserDefaults]stringForKey:@"scrollViewOffset"]) animated:true];
 
 }
 -(int)numberOfStarsCollectedFromArray:(NSArray*)array{
@@ -589,14 +604,12 @@
     int num = 0;
     for (int i = 0; i < array.count; i++) {
 
-
         if ([array[i]integerValue] == 1) {
             num ++;
         }
     }
 
     return num;
-    
 }
 
 
@@ -619,38 +632,16 @@
     scrollBackGround1.contentOffset = scrollView.contentOffset;
     scrollBackGround2.contentOffset = scrollView.contentOffset;
 
-    level1.contentOffset = scrollView.contentOffset;
-    level2.contentOffset = scrollView.contentOffset;
-    level3.contentOffset = scrollView.contentOffset;
-    level4.contentOffset = scrollView.contentOffset;
-    level5.contentOffset = scrollView.contentOffset;
-    level6.contentOffset = scrollView.contentOffset;
-    level7.contentOffset = scrollView.contentOffset;
-    level8.contentOffset = scrollView.contentOffset;
-    level9.contentOffset = scrollView.contentOffset;
-    level10.contentOffset = scrollView.contentOffset;
-    level11.contentOffset = scrollView.contentOffset;
-    level12.contentOffset = scrollView.contentOffset;
-    level13.contentOffset = scrollView.contentOffset;
-    level14.contentOffset = scrollView.contentOffset;
-    level15.contentOffset = scrollView.contentOffset;
-    level16.contentOffset = scrollView.contentOffset;
-    level17.contentOffset = scrollView.contentOffset;
-    level18.contentOffset = scrollView.contentOffset;
-    level19.contentOffset = scrollView.contentOffset;
-    level20.contentOffset = scrollView.contentOffset;
-    level21.contentOffset = scrollView.contentOffset;
-    level22.contentOffset = scrollView.contentOffset;
-    level23.contentOffset = scrollView.contentOffset;
-    level24.contentOffset = scrollView.contentOffset;
-    level25.contentOffset = scrollView.contentOffset;
+    for (JMScrollableNode *curLevel in levelArray) {
+        curLevel.contentOffset = scrollView.contentOffset;
+
+    }
+
 
     CGPoint x = CGPointMake(origPath.x - scrollView.contentOffset.x,
                             origPath.y - scrollView.contentOffset.y);
     [levelPath setPosition:x];
 
-
-    
     [[NSUserDefaults standardUserDefaults]setValue:NSStringFromCGPoint(scrollViewMenu.contentOffset) forKey:@"scrollViewOffset"];
 }
 
@@ -869,13 +860,11 @@
         }
     }
     
-    
     if ( level.currentLevel > 0) {
         NSLog(@"Currentlt level you tapped on %d",level.currentLevel);
         [self.view presentScene:level];
 
     }
-
 
 }
 
@@ -884,10 +873,8 @@
     [super willMoveFromView:view];
     [[NSUserDefaults standardUserDefaults]synchronize];
 
-
     scrollViewMenu = nil;
     
-
 }
 
 @end
